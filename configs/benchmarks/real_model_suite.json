@@ -1,0 +1,53 @@
+{
+  "schema": "accelclosure.real_model_suite.v1",
+  "precision": {
+    "activation": "INT8",
+    "weight": "INT8",
+    "accumulator": "INT32"
+  },
+  "models": [
+    {
+      "name": "TinyBERT-4L-312D",
+      "huggingface_id": "huawei-noah/TinyBERT_General_4L_312D",
+      "family": "bert",
+      "scenarios": [
+        {
+          "name": "encoder_seq128",
+          "sequence_length": 128
+        }
+      ]
+    },
+    {
+      "name": "TinyLlama-1.1B",
+      "huggingface_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "family": "llama",
+      "scenarios": [
+        {
+          "name": "prefill_128",
+          "sequence_length": 128
+        },
+        {
+          "name": "decode_1_ctx128",
+          "sequence_length": 1,
+          "context_length": 128
+        }
+      ]
+    },
+    {
+      "name": "Qwen2.5-1.5B",
+      "huggingface_id": "Qwen/Qwen2.5-1.5B",
+      "family": "qwen2",
+      "scenarios": [
+        {
+          "name": "prefill_128",
+          "sequence_length": 128
+        },
+        {
+          "name": "decode_1_ctx128",
+          "sequence_length": 1,
+          "context_length": 128
+        }
+      ]
+    }
+  ]
+}

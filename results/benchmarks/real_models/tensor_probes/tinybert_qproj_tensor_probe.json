@@ -1,0 +1,90 @@
+{
+  "schema": "accelclosure.real_tensor_probe.v1",
+  "status": "PASS",
+  "model": {
+    "name": "TinyBERT-4L-312D",
+    "huggingface_id": "huawei-noah/TinyBERT_General_4L_312D",
+    "commit_hash": "34707a33cd59a94ecde241ac209bf35103691b43",
+    "tokenizer_source": "huawei-noah/TinyBERT_General_4L_312D"
+  },
+  "probe": {
+    "operation": "first_layer_q_projection",
+    "module": "encoder.layer.0.attention.self.query",
+    "bias_present": true,
+    "bias_included": false,
+    "activation_shape": [
+      1,
+      16,
+      312
+    ],
+    "weight_shape": [
+      312,
+      312
+    ],
+    "selected_gemm": {
+      "m": 16,
+      "k": 312,
+      "n": 64
+    }
+  },
+  "quantization": {
+    "scheme": "symmetric_per_tensor_int8",
+    "range": [
+      -127,
+      127
+    ],
+    "activation_scale": 0.06826620777760904,
+    "weight_scale": 0.04523733093982606,
+    "accumulator": "INT32-compatible",
+    "activation_int8_sha256": "e59837dfbc01408e9e95d9ba83f21bb6efa8678b62dcd7eaf4bd676e2751bdcb",
+    "weight_int8_sha256": "579031b15e8509985580f80351f91324b231c68d4e3f98d1896cd86332ec046c",
+    "int_reference_sha256": "9ea899176545e113b68ecadca41621940da5611dac249c4380d23f70a1343604"
+  },
+  "numeric_quality": {
+    "rmse": 0.17965165070880346,
+    "mae": 0.1449102759361267,
+    "relative_rmse": 0.1140579239040098,
+    "cosine_similarity": 0.9935067196616613,
+    "max_abs_error": 0.655434250831604
+  },
+  "arrays": {
+    "4x4": {
+      "exact_int32_match": true,
+      "tile_m_count": 4,
+      "tile_k_count": 78,
+      "tile_n_count": 16,
+      "tile_operations": 4992,
+      "useful_macs": 319488,
+      "physical_macs": 319488,
+      "compute_utilization": 1.0
+    },
+    "8x8": {
+      "exact_int32_match": true,
+      "tile_m_count": 2,
+      "tile_k_count": 39,
+      "tile_n_count": 8,
+      "tile_operations": 624,
+      "useful_macs": 319488,
+      "physical_macs": 319488,
+      "compute_utilization": 1.0
+    },
+    "16x16": {
+      "exact_int32_match": true,
+      "tile_m_count": 1,
+      "tile_k_count": 20,
+      "tile_n_count": 4,
+      "tile_operations": 80,
+      "useful_macs": 319488,
+      "physical_macs": 327680,
+      "compute_utilization": 0.975
+    }
+  },
+  "claim_discipline": {
+    "real_model_weights": true,
+    "real_model_activation": true,
+    "full_model_inference": false,
+    "operation_scope": "selected first-layer Q projection",
+    "integer_execution": "software tiled INT8/INT32 reference",
+    "rtl_executed": false
+  }
+}

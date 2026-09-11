@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "build_stdout": "make: Entering directory '/tmp/tmp1hck_yid/obj_dir'\ng++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow      -Os -c -o sim_main.o /tmp/tmp1hck_yid/sim_main.cpp\ng++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow      -Os -c -o verilated.o /usr/share/verilator/include/verilated.cpp\ng++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow      -Os -c -o Vaccelclosure_ws_array.o Vaccelclosure_ws_array.cpp\ng++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow      -Os -c -o Vaccelclosure_ws_array__1.o Vaccelclosure_ws_array__1.cpp\ng++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -c -o Vaccelclosure_ws_array__Slow.o Vaccelclosure_ws_array__Slow.cpp\ng++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -c -o Vaccelclosure_ws_array__Syms.o Vaccelclosure_ws_array__Syms.cpp\nar -cr Vaccelclosure_ws_array__ALL.a Vaccelclosure_ws_array.o Vaccelclosure_ws_array__1.o Vaccelclosure_ws_array__Slow.o Vaccelclosure_ws_array__Syms.o\nranlib Vaccelclosure_ws_array__ALL.a\ng++    sim_main.o verilated.o Vaccelclosure_ws_array__ALL.a      -o Vaccelclosure_ws_array\nmake: Leaving directory '/tmp/tmp1hck_yid/obj_dir'\n",
+  "build_stderr": "",
+  "simulation_stdout": "REGRESSION_CASES_PASSED=26/26\nCONFIG_N=16\nPE_HOP_LATENCY=2\nACCELCLOSURE_PARAMETRIC_GEMM_PASS\n",
+  "simulation_stderr": "",
+  "N": 16,
+  "DATA_W": 8,
+  "ACC_W": 32,
+  "functional_verified": true,
+  "pe_hop_latency": 2,
+  "boundary_registers": true,
+  "random_cases": 25,
+  "random_seed": "0xACCE1"
+}

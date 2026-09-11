@@ -1,0 +1,13 @@
+compute|src/main/scala/gemmini/Arithmetic.scala
+compute|src/main/scala/gemmini/Dataflow.scala
+compute|src/main/scala/gemmini/PE.scala
+compute|src/main/scala/gemmini/Tile.scala
+compute|src/main/scala/gemmini/Mesh.scala
+compute|src/main/scala/gemmini/MeshWithDelays.scala
+memory|src/main/scala/gemmini/Scratchpad.scala
+memory|src/main/scala/gemmini/AccumulatorMem.scala
+control|src/main/scala/gemmini/ExecuteController.scala
+workload|src/main/scala/gemmini/LoopMatmul.scala
+workload|src/main/scala/gemmini/LoopConv.scala
+config|src/main/scala/gemmini/Configs.scala
+config|src/main/scala/gemmini/GemminiConfigs.scala

@@ -1,0 +1,64 @@
+# ============================================================
+# AccelClosure release exclusions
+# ============================================================
+
+# Python / local environments
+.venv_plot/
+benchmarks/.linkedin_viz/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local credentials / environment files
+.env
+.env.*
+*.pem
+*.key
+application_default_credentials.json
+.gcloud/
+
+# Heavy generated EDA working directories
+orfs_runs/
+logs/
+
+# Per-run generated artifacts
+results/runs/
+results/submission/autonomous_runs/
+
+# Large GDS / DEF submission copies remain local
+results/submission/physical_design/
+
+# Development backups / temporary patch helpers
+src/*_before_*.py
+src/*_legacy.py
+scripts/install_run_open.py
+scripts/patch_open_feature.py
+
+# Editor / OS temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Large generated synthesis/netlist intermediates
+results/closure/**/netlist_adapter/
+results/fmax_search/**/1_2_yosys_original.v
+results/fmax_search/**/1_2_yosys_openroad_compatible.v
+
+# Local GUI environment
+.venv_gui/
+
+# Development history / local backups
+gui/*_before_*.py
+agents/revisions/
+src/revisions/
+rtl/revisions/
+tests/revisions/
+results/audits/
+
+# Per-run generated implementation configs
+configs/generated/
+
+# Locally cloned external reference source
+golden/sources/gemmini/

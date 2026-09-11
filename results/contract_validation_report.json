@@ -1,0 +1,26 @@
+{
+  "validator_version": "1.0",
+  "status": "VALID",
+  "checks_passed": [
+    "BASIC_SCHEMA",
+    "GOLDEN_REFERENCE_ID",
+    "GOLDEN_COMMIT",
+    "CONTEXT_PROVENANCE",
+    "SOURCE_FILES_GROUNDED",
+    "SQUARE_ARRAY",
+    "POWER_OF_TWO_DIMENSION",
+    "DATAFLOW_VALID",
+    "INPUT_WEIGHT_WIDTH_MATCH",
+    "FREQUENCY_IS_TARGET",
+    "NO_UNMEASURED_RESULT_CLAIMS",
+    "NO_PRE_EDA_PPA_CLAIMS"
+  ],
+  "warnings": [
+    "Future-plan wording is too strong: 'ensure sky130 150 mhz'. Prefer 'target' or 'evaluate'.",
+    "Future-plan wording is too strong: 'guarantee 150 mhz'. Prefer 'target' or 'evaluate'.",
+    "Future-plan wording is too strong: 'guarantee 150 mhz operation'. Prefer 'target' or 'evaluate'.",
+    "Gemmini golden source is inspected but has not yet been locally execution-verified. It is architectural guidance."
+  ],
+  "errors": [],
+  "ready_for_rtl_generation": true
+}

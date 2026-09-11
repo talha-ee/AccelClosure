@@ -1,0 +1,35 @@
+{
+  "status": "PIPELINE_REDESIGN_UNVERIFIED",
+  "closure_version": "1.0",
+  "failure_class": "TIMING_ARCHITECTURE",
+  "root_cause": "The critical path traverses from primary activation inputs directly through unpipelined PE MAC arithmetic (an 8x8 signed multiplier and a 32-bit adder) in a single cycle, resulting in timing failure at 150 MHz.",
+  "architecture_change": "Partitioned the PE microarchitecture into two pipeline stages (Stage A: multiplication/alignment, Stage B: INT32 accumulation). Added synchronous boundary input registers at the array level to isolate external input delays from internal systolic arithmetic. Increased activation and partial-sum hop latencies to 2 cycles each, uniformly preserving structural wavefront alignment.",
+  "pipeline_metadata": {
+    "boundary_input_registers": true,
+    "pe_pipeline_stages": 2,
+    "activation_hop_latency_cycles": 2,
+    "psum_hop_latency_cycles": 2,
+    "valid_alignment_preserved": true,
+    "weight_stationary_preserved": true,
+    "external_schedule_change_required": true
+  },
+  "timing_reasoning": [
+    "Separating the signed INT8 multiplication and INT32 accumulation into discrete pipeline stages aggressively reduces the internal combinational depth of the processing element.",
+    "Synchronous array-boundary input registers eliminate the reported timing startpoint issue, decoupling input port delay from internal PE arithmetic.",
+    "Pipelining the primary inputs (act_in and psum_in) into an alignment register alongside the product ensures both dimensions of the systolic wavefront remain logically and mathematically aligned."
+  ],
+  "verification_required": [
+    "Verilator lint",
+    "Directed GEMM verification",
+    "Random signed INT8 GEMM regression",
+    "Sky130 synthesis at 6.667 ns",
+    "OpenROAD STA at 6.667 ns"
+  ],
+  "source_tool": "OpenROAD/OpenSTA",
+  "source_sta": "/home/talha/CHIA_Hackathon/AccelClosure/results/closure/iter0_150mhz/sta/prelayout_sta.log",
+  "target_period_ns": 6.667,
+  "target_frequency_mhz": 150.0,
+  "target_relaxed": false,
+  "pre_redesign_backup": "rtl/revisions/v4_before_pipeline_closure_agent",
+  "verified": false
+}

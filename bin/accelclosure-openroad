@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ORFS_IMAGE="openroad/orfs@sha256:4886dd9c9723ea5539c2bfc1d6ceaf556f71f5827908c569523e430656ecec5c"
+
+exec docker run --rm -it \
+  -e DISPLAY="${DISPLAY:-}" \
+  -e WAYLAND_DISPLAY="${WAYLAND_DISPLAY:-}" \
+  -e XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/mnt/wslg/runtime-dir}" \
+  -e QT_QPA_PLATFORM="${QT_QPA_PLATFORM:-xcb}" \
+  -e LIBGL_ALWAYS_SOFTWARE="${LIBGL_ALWAYS_SOFTWARE:-1}" \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v /mnt/wslg:/mnt/wslg \
+  -v "$ROOT:/workspace/AccelClosure" \
+  -w /workspace/AccelClosure \
+  "$ORFS_IMAGE" \
+  bash -lc 'source /OpenROAD-flow-scripts/env.sh >/dev/null 2>&1; exec openroad "$@"' bash "$@"

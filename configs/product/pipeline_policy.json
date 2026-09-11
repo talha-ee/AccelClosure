@@ -1,0 +1,47 @@
+{
+  "schema": "accelclosure.pipeline_policy.v2",
+
+  "objective": "high-throughput timing-closure-ready systolic pipelining",
+
+  "throughput": {
+    "steady_state_initiation_interval_cycles": 1,
+    "allow_multiple_wavefronts_in_flight": true
+  },
+
+  "boundary_pipeline": {
+    "require_input_boundary_registers": true,
+    "register_activation_inputs": true,
+    "register_partial_sum_inputs": true,
+    "register_valid_inputs": true
+  },
+
+  "inter_pe_pipeline": {
+    "require_registered_activation_hops": true,
+    "require_registered_partial_sum_hops": true,
+    "require_registered_valid_hops": true,
+    "forbid_combinational_paths_across_multiple_pes": true
+  },
+
+  "arithmetic_pipeline": {
+    "minimum_stages": 2,
+    "stage_1": "signed multiplication",
+    "stage_2": "accumulation",
+    "require_register_between_multiply_and_accumulate": true,
+    "forbid_single_stage_multiply_accumulate": true,
+    "allow_additional_stages_if_required_by_sta": true
+  },
+
+  "alignment": {
+    "activation_data_and_valid_must_align": true,
+    "partial_sum_data_and_valid_must_align": true,
+    "multiplier_pipeline_valid_must_align": true,
+    "wavefront_latency_must_be_deterministic": true
+  },
+
+  "closure_rules": {
+    "never_relax_requested_clock_automatically": true,
+    "functional_reverification_required_after_pipeline_change": true,
+    "sta_remeasurement_required_after_pipeline_change": true,
+    "eda_results_are_authoritative": true
+  }
+}

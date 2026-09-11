@@ -1,0 +1,2155 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Executing script file `/tmp/tmpvelwdd4z/synth.ys' --
+
+1. Executing Verilog-2005 frontend: accelclosure_ws_pe.sv
+Parsing SystemVerilog input from `accelclosure_ws_pe.sv' to AST representation.
+Generating RTLIL representation for module `\accelclosure_ws_pe'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: accelclosure_ws_array.sv
+Parsing SystemVerilog input from `accelclosure_ws_array.sv' to AST representation.
+Generating RTLIL representation for module `\accelclosure_ws_array'.
+Successfully finished Verilog frontend.
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_array'.
+Parameter \N = 16
+Generating RTLIL representation for module `$paramod\accelclosure_ws_array\N=16'.
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_array'.
+Parameter \DATA_W = 8
+Generating RTLIL representation for module `$paramod\accelclosure_ws_array\DATA_W=8'.
+
+5. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_array'.
+Parameter \ACC_W = 32
+Generating RTLIL representation for module `$paramod\accelclosure_ws_array\ACC_W=32'.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \accelclosure_ws_array
+Used module:     \accelclosure_ws_pe
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Generating RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.3. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.4. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.5. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.6. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.7. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.8. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.9. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.10. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.11. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.12. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.13. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.14. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.15. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.16. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.17. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.18. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.19. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.20. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.21. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.22. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.23. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.24. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.25. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.26. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.27. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.28. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.29. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.30. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.31. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.32. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.33. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.34. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.35. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.36. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.37. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.38. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.39. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.40. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.41. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.42. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.43. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.44. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.45. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.46. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.47. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.48. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.49. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.50. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.51. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.52. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.53. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.54. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.55. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.56. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.57. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.58. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.59. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.60. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.61. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.62. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.63. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.64. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.65. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.66. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.67. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.68. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.69. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.70. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.71. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.72. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.73. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.74. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.75. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.76. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.77. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.78. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.79. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.80. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.81. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.82. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.83. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.84. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.85. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.86. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.87. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.88. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.89. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.90. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.91. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.92. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.93. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.94. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.95. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.96. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.97. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.98. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.99. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.100. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.101. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.102. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.103. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.104. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.105. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.106. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.107. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.108. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.109. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.110. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.111. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.112. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.113. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.114. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.115. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.116. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.117. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.118. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.119. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.120. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.121. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.122. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.123. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.124. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.125. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.126. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.127. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.128. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.129. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.130. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.131. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.132. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.133. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.134. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.135. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.136. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.137. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.138. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.139. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.140. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.141. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.142. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.143. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.144. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.145. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.146. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.147. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.148. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.149. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.150. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.151. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.152. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.153. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.154. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.155. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.156. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.157. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.158. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.159. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.160. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.161. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.162. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.163. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.164. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.165. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.166. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.167. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.168. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.169. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.170. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.171. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.172. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.173. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.174. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.175. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.176. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.177. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.178. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.179. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.180. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.181. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.182. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.183. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.184. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.185. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.186. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.187. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.188. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.189. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.190. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.191. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.192. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.193. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.194. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.195. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.196. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.197. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.198. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.199. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.200. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.201. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.202. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.203. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.204. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.205. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.206. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.207. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.208. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.209. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.210. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.211. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.212. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.213. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.214. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.215. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.216. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.217. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.218. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.219. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.220. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.221. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.222. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.223. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.224. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.225. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.226. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.227. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.228. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.229. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.230. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.231. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.232. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.233. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.234. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.235. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.236. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.237. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.238. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.239. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.240. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.241. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.242. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.243. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.244. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.245. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.246. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.247. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.248. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.249. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.250. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.251. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.252. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.253. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.254. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.255. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.256. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.257. Executing AST frontend in derive mode using pre-parsed AST for module `\accelclosure_ws_pe'.
+Parameter \DATA_W = 8
+Parameter \ACC_W = 32
+Found cached RTLIL representation for module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+
+6.258. Analyzing design hierarchy..
+Top module:  \accelclosure_ws_array
+Used module:     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32
+
+6.259. Analyzing design hierarchy..
+Top module:  \accelclosure_ws_array
+Used module:     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32
+Removing unused module `\accelclosure_ws_pe'.
+Removed 1 unused modules.
+
+7. Executing SYNTH pass.
+
+7.1. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1.1. Analyzing design hierarchy..
+Top module:  \accelclosure_ws_array
+Used module:     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32
+
+7.1.2. Analyzing design hierarchy..
+Top module:  \accelclosure_ws_array
+Used module:     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32
+Removed 0 unused modules.
+
+7.2. Executing PROC pass (convert processes to netlists).
+
+7.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$accelclosure_ws_pe.sv:31$2059 in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Removed a total of 0 dead cases.
+
+7.2.3. Executing PROC_INIT pass (extract init attributes).
+
+7.2.4. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+
+7.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+     1/64: $0\psum_data[15][31:0]
+     2/64: $0\psum_valid[15][0:0]
+     3/64: $0\act_data[255][7:0]
+     4/64: $0\act_valid[255][0:0]
+     5/64: $0\psum_data[14][31:0]
+     6/64: $0\psum_valid[14][0:0]
+     7/64: $0\act_data[238][7:0]
+     8/64: $0\act_valid[238][0:0]
+     9/64: $0\psum_data[13][31:0]
+    10/64: $0\psum_valid[13][0:0]
+    11/64: $0\act_data[221][7:0]
+    12/64: $0\act_valid[221][0:0]
+    13/64: $0\psum_data[12][31:0]
+    14/64: $0\psum_valid[12][0:0]
+    15/64: $0\act_data[204][7:0]
+    16/64: $0\act_valid[204][0:0]
+    17/64: $0\psum_data[11][31:0]
+    18/64: $0\psum_valid[11][0:0]
+    19/64: $0\act_data[187][7:0]
+    20/64: $0\act_valid[187][0:0]
+    21/64: $0\psum_data[10][31:0]
+    22/64: $0\psum_valid[10][0:0]
+    23/64: $0\act_data[170][7:0]
+    24/64: $0\act_valid[170][0:0]
+    25/64: $0\psum_data[9][31:0]
+    26/64: $0\psum_valid[9][0:0]
+    27/64: $0\act_data[153][7:0]
+    28/64: $0\act_valid[153][0:0]
+    29/64: $0\psum_data[8][31:0]
+    30/64: $0\psum_valid[8][0:0]
+    31/64: $0\act_data[136][7:0]
+    32/64: $0\act_valid[136][0:0]
+    33/64: $0\psum_data[7][31:0]
+    34/64: $0\psum_valid[7][0:0]
+    35/64: $0\act_data[119][7:0]
+    36/64: $0\act_valid[119][0:0]
+    37/64: $0\psum_data[6][31:0]
+    38/64: $0\psum_valid[6][0:0]
+    39/64: $0\act_data[102][7:0]
+    40/64: $0\act_valid[102][0:0]
+    41/64: $0\psum_data[5][31:0]
+    42/64: $0\psum_valid[5][0:0]
+    43/64: $0\act_data[85][7:0]
+    44/64: $0\act_valid[85][0:0]
+    45/64: $0\psum_data[4][31:0]
+    46/64: $0\psum_valid[4][0:0]
+    47/64: $0\act_data[68][7:0]
+    48/64: $0\act_valid[68][0:0]
+    49/64: $0\psum_data[3][31:0]
+    50/64: $0\psum_valid[3][0:0]
+    51/64: $0\act_data[51][7:0]
+    52/64: $0\act_valid[51][0:0]
+    53/64: $0\psum_data[2][31:0]
+    54/64: $0\psum_valid[2][0:0]
+    55/64: $0\act_data[34][7:0]
+    56/64: $0\act_valid[34][0:0]
+    57/64: $0\psum_data[1][31:0]
+    58/64: $0\psum_valid[1][0:0]
+    59/64: $0\act_data[17][7:0]
+    60/64: $0\act_valid[17][0:0]
+    61/64: $0\psum_data[0][31:0]
+    62/64: $0\psum_valid[0][0:0]
+    63/64: $0\act_data[0][7:0]
+    64/64: $0\act_valid[0][0:0]
+Creating decoders for process `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+     1/5: $0\weight_reg[7:0]
+     2/5: $0\psum_out[31:0]
+     3/5: $0\psum_valid_out[0:0]
+     4/5: $0\act_out[7:0]
+     5/5: $0\act_valid_out[0:0]
+
+7.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[0]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[17]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[34]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[51]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[68]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[85]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[102]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[119]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[136]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[153]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[170]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[187]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[204]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[221]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[238]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_valid[255]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[0]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[17]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[34]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[51]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[68]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[85]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[102]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[119]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[136]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[153]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[170]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[187]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[204]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[221]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[238]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\act_data[255]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[0]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[1]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[2]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[3]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[4]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[5]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[6]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[7]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[8]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[9]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[10]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[11]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[12]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[13]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[14]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_valid[15]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[0]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[1]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[2]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[3]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[4]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[5]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[6]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[7]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[8]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[9]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[10]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[11]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[12]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[13]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[14]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+No latch inferred for signal `\accelclosure_ws_array.\psum_data[15]' from process `\accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+
+7.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.\act_valid_out' using process `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+  created $adff cell `$procdff$2065' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.\act_out' using process `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+  created $adff cell `$procdff$2066' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.\psum_valid_out' using process `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+  created $adff cell `$procdff$2067' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.\psum_out' using process `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+  created $adff cell `$procdff$2068' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.\weight_reg' using process `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+  created $adff cell `$procdff$2069' with positive edge clock and negative level reset.
+
+7.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `accelclosure_ws_array.$proc$accelclosure_ws_array.sv:1$2057'.
+Found and cleaned up 1 empty switch in `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+Removing empty process `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$proc$accelclosure_ws_pe.sv:31$2059'.
+Cleaned up 1 empty switch.
+
+7.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accelclosure_ws_array.
+<suppressed ~16 debug messages>
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accelclosure_ws_array..
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Removed 1 unused cells and 328 unused wires.
+<suppressed ~3 debug messages>
+
+7.5. Executing CHECK pass (checking for obvious problems).
+checking module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+checking module accelclosure_ws_array..
+found and reported 0 problems.
+
+7.6. Executing OPT pass (performing simple optimizations).
+
+7.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+<suppressed ~1440 debug messages>
+Removed a total of 480 cells.
+
+7.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \accelclosure_ws_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+7.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+  Optimizing cells in module \accelclosure_ws_array.
+Performed a total of 0 changes.
+
+7.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.6.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+Removed 0 unused cells and 240 unused wires.
+<suppressed ~1 debug messages>
+
+7.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.6.9. Finished OPT passes. (There is nothing left to do.)
+
+7.7. Executing WREDUCE pass (reducing word size of cells).
+Removed top 16 bits (of 32) from port B of cell $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.$add$accelclosure_ws_pe.sv:47$2062 ($add).
+Removed top 3 bits (of 4) from port B of cell accelclosure_ws_array.$eq$accelclosure_ws_array.sv:48$1577 ($eq).
+Removed top 2 bits (of 4) from port B of cell accelclosure_ws_array.$eq$accelclosure_ws_array.sv:48$1609 ($eq).
+Removed top 2 bits (of 4) from port B of cell accelclosure_ws_array.$eq$accelclosure_ws_array.sv:48$1641 ($eq).
+Removed top 1 bits (of 4) from port B of cell accelclosure_ws_array.$eq$accelclosure_ws_array.sv:48$1673 ($eq).
+Removed top 1 bits (of 4) from port B of cell accelclosure_ws_array.$eq$accelclosure_ws_array.sv:48$1705 ($eq).
+Removed top 1 bits (of 4) from port B of cell accelclosure_ws_array.$eq$accelclosure_ws_array.sv:48$1737 ($eq).
+Removed top 1 bits (of 4) from port B of cell accelclosure_ws_array.$eq$accelclosure_ws_array.sv:48$1769 ($eq).
+
+7.8. Executing PEEPOPT pass (run peephole optimizers).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.10. Executing TECHMAP pass (map to technology primitives).
+
+7.10.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+7.10.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~244 debug messages>
+
+7.11. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32:
+  creating $macc model for $add$accelclosure_ws_pe.sv:47$2062 ($add).
+  creating $macc model for $mul$accelclosure_ws_pe.sv:28$2058 ($mul).
+  merging $macc model for $mul$accelclosure_ws_pe.sv:28$2058 into $add$accelclosure_ws_pe.sv:47$2062.
+  creating $macc cell for $add$accelclosure_ws_pe.sv:47$2062: $auto$alumacc.cc:354:replace_macc$2070
+  created 0 $alu and 1 $macc cells.
+Extracting $alu and $macc cells in module accelclosure_ws_array:
+  created 0 $alu and 0 $macc cells.
+
+7.12. Executing SHARE pass (SAT-based resource sharing).
+
+7.13. Executing OPT pass (performing simple optimizations).
+
+7.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \accelclosure_ws_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+7.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+  Optimizing cells in module \accelclosure_ws_array.
+Performed a total of 0 changes.
+
+7.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.13.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+7.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \accelclosure_ws_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+7.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+  Optimizing cells in module \accelclosure_ws_array.
+Performed a total of 0 changes.
+
+7.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.13.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.13.16. Finished OPT passes. (There is nothing left to do.)
+
+7.14. Executing FSM pass (extract and optimize FSM).
+
+7.14.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+7.14.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+7.14.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+7.14.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.14.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+7.14.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+7.14.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+7.14.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+7.15. Executing OPT pass (performing simple optimizations).
+
+7.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.15.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.15.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.15.5. Finished fast OPT passes.
+
+7.16. Executing MEMORY pass.
+
+7.16.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+7.16.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.16.3. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.16.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.16.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.18. Executing OPT pass (performing simple optimizations).
+
+7.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.18.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.18.5. Finished fast OPT passes.
+
+7.19. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+7.20. Executing OPT pass (performing simple optimizations).
+
+7.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \accelclosure_ws_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+7.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+  Optimizing cells in module \accelclosure_ws_array.
+Performed a total of 0 changes.
+
+7.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.20.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.20.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+
+7.20.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.20.9. Finished OPT passes. (There is nothing left to do.)
+
+7.21. Executing TECHMAP pass (map to technology primitives).
+
+7.21.1. Executing Verilog-2005 frontend: <techmap.v>
+Parsing Verilog input from `<techmap.v>' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper maccmap for cells of type $macc.
+  add \psum_in (32 bits, signed)
+  add \act_in * \weight_reg (8x8 bits, signed)
+Using template $paramod\_90_fa\WIDTH=32 for cells of type $fa.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=32\B_WIDTH=32\Y_WIDTH=32 for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~454 debug messages>
+
+7.22. Executing OPT pass (performing simple optimizations).
+
+7.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+<suppressed ~312 debug messages>
+Optimizing module accelclosure_ws_array.
+<suppressed ~28 debug messages>
+
+7.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+<suppressed ~1398 debug messages>
+Finding identical cells in module `\accelclosure_ws_array'.
+<suppressed ~156 debug messages>
+Removed a total of 518 cells.
+
+7.22.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+Removed 58 unused cells and 162 unused wires.
+<suppressed ~60 debug messages>
+
+7.22.5. Finished fast OPT passes.
+
+7.23. Executing ABC pass (technology mapping using ABC).
+
+7.23.1. Extracting gate netlist of module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32' to `<abc-temp-dir>/input.blif'..
+Extracted 1037 gates and 1096 wires to a netlist network with 59 inputs and 41 outputs.
+
+7.23.1.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 17 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + retime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+7.23.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       74
+ABC RESULTS:            ANDNOT cells:      177
+ABC RESULTS:              AOI3 cells:      118
+ABC RESULTS:               MUX cells:        8
+ABC RESULTS:              NAND cells:       23
+ABC RESULTS:               NOR cells:       16
+ABC RESULTS:               NOT cells:       17
+ABC RESULTS:              OAI3 cells:       25
+ABC RESULTS:                OR cells:       47
+ABC RESULTS:             ORNOT cells:       33
+ABC RESULTS:              XNOR cells:      105
+ABC RESULTS:               XOR cells:      284
+ABC RESULTS:        internal signals:      996
+ABC RESULTS:           input signals:       59
+ABC RESULTS:          output signals:       41
+Removing temp directory.
+
+7.23.2. Extracting gate netlist of module `\accelclosure_ws_array' to `<abc-temp-dir>/input.blif'..
+Extracted 60 gates and 66 wires to a netlist network with 5 inputs and 16 outputs.
+
+7.23.2.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 17 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + retime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+7.23.2.2. Re-integrating ABC results.
+ABC RESULTS:            ANDNOT cells:       16
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:                OR cells:       18
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:        internal signals:       45
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:       16
+Removing temp directory.
+
+7.24. Executing OPT pass (performing simple optimizations).
+
+7.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32.
+Optimizing module accelclosure_ws_array.
+
+7.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Finding identical cells in module `\accelclosure_ws_array'.
+Removed a total of 0 cells.
+
+7.24.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+Finding unused cells or wires in module \accelclosure_ws_array..
+Removed 0 unused cells and 304 unused wires.
+<suppressed ~2 debug messages>
+
+7.24.5. Finished fast OPT passes.
+
+7.25. Executing HIERARCHY pass (managing design hierarchy).
+
+7.25.1. Analyzing design hierarchy..
+Top module:  \accelclosure_ws_array
+Used module:     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32
+
+7.25.2. Analyzing design hierarchy..
+Top module:  \accelclosure_ws_array
+Used module:     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32
+Removed 0 unused modules.
+
+7.26. Printing statistics.
+
+=== $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32 ===
+
+   Number of wires:                902
+   Number of wire bits:           1030
+   Number of public wires:          13
+   Number of public wire bits:     103
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                977
+     $_ANDNOT_                     177
+     $_AND_                         74
+     $_AOI3_                       118
+     $_DFF_PN0_                     50
+     $_MUX_                          8
+     $_NAND_                        23
+     $_NOR_                         16
+     $_NOT_                         17
+     $_OAI3_                        25
+     $_ORNOT_                       33
+     $_OR_                          47
+     $_XNOR_                       105
+     $_XOR_                        284
+
+=== accelclosure_ws_array ===
+
+   Number of wires:               1635
+   Number of wire bits:          15087
+   Number of public wires:        1611
+   Number of public wire bits:   15063
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                296
+     $_ANDNOT_                      16
+     $_NAND_                         2
+     $_ORNOT_                        4
+     $_OR_                          18
+     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32    256
+
+=== design hierarchy ===
+
+   accelclosure_ws_array             1
+     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32    256
+
+   Number of wires:             232547
+   Number of wire bits:         278767
+   Number of public wires:        4939
+   Number of public wire bits:   41431
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:             250152
+     $_ANDNOT_                   45328
+     $_AND_                      18944
+     $_AOI3_                     30208
+     $_DFF_PN0_                  12800
+     $_MUX_                       2048
+     $_NAND_                      5890
+     $_NOR_                       4096
+     $_NOT_                       4352
+     $_OAI3_                      6400
+     $_ORNOT_                     8452
+     $_OR_                       12050
+     $_XNOR_                     26880
+     $_XOR_                      72704
+
+7.27. Executing CHECK pass (checking for obvious problems).
+checking module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+checking module accelclosure_ws_array..
+found and reported 0 problems.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32..
+checking module accelclosure_ws_array..
+found and reported 0 problems.
+
+9. Printing statistics.
+
+=== $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32 ===
+
+   Number of wires:                902
+   Number of wire bits:           1030
+   Number of public wires:          13
+   Number of public wire bits:     103
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                977
+     $_ANDNOT_                     177
+     $_AND_                         74
+     $_AOI3_                       118
+     $_DFF_PN0_                     50
+     $_MUX_                          8
+     $_NAND_                        23
+     $_NOR_                         16
+     $_NOT_                         17
+     $_OAI3_                        25
+     $_ORNOT_                       33
+     $_OR_                          47
+     $_XNOR_                       105
+     $_XOR_                        284
+
+=== accelclosure_ws_array ===
+
+   Number of wires:               1635
+   Number of wire bits:          15087
+   Number of public wires:        1611
+   Number of public wire bits:   15063
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                296
+     $_ANDNOT_                      16
+     $_NAND_                         2
+     $_ORNOT_                        4
+     $_OR_                          18
+     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32    256
+
+=== design hierarchy ===
+
+   accelclosure_ws_array             1
+     $paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32    256
+
+   Number of wires:             232547
+   Number of wire bits:         278767
+   Number of public wires:        4939
+   Number of public wire bits:   41431
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:             250152
+     $_ANDNOT_                   45328
+     $_AND_                      18944
+     $_AOI3_                     30208
+     $_DFF_PN0_                  12800
+     $_MUX_                       2048
+     $_NAND_                      5890
+     $_NOR_                       4096
+     $_NOT_                       4352
+     $_OAI3_                      6400
+     $_ORNOT_                     8452
+     $_OR_                       12050
+     $_XNOR_                     26880
+     $_XOR_                      72704
+
+10. Executing Verilog backend.
+Dumping module `$paramod\accelclosure_ws_pe\DATA_W=8\ACC_W=32'.
+Dumping module `\accelclosure_ws_array'.
+
+End of script. Logfile hash: d93a9c6d6a
+CPU: user 2.09s system 0.07s, MEM: 38.02 MB total, 31.17 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 35% 15x opt_clean (0 sec), 16% 3x chparam (0 sec), ...
+

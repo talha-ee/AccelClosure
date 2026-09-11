@@ -1,0 +1,251 @@
+{
+  "schema": "accelclosure.final_benchmark_report.v1",
+  "status": "PASS",
+  "hardware_designs": [
+    {
+      "array": "4x4",
+      "target_frequency_mhz": 180.0,
+      "postroute_fmax_estimate_mhz": 210.57,
+      "routed_area_mm2": 0.121669,
+      "vectorless_power_w": 0.0795,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "route_drc_violations": 0,
+      "gds_sha256": "f5e4f47bfe018489850f66b4333376f92101d8fdcc933218814c859f903b8672"
+    },
+    {
+      "array": "8x8",
+      "target_frequency_mhz": 200.0,
+      "postroute_fmax_estimate_mhz": 212.0,
+      "routed_area_mm2": 0.505428,
+      "vectorless_power_w": 0.357,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "route_drc_violations": 0,
+      "gds_sha256": "5518c036375564ba455aba5f05f66eeeca2e03e624f56c16315c328f72a1e7e4"
+    },
+    {
+      "array": "16x16",
+      "target_frequency_mhz": 150.0,
+      "postroute_fmax_estimate_mhz": 208.18,
+      "routed_area_mm2": 1.890364,
+      "vectorless_power_w": 1.28,
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "route_drc_violations": 0,
+      "gds_sha256": "86a484e15045be3357e3deb011beb2777f311c850b900c01b7c2adca9db89ab1"
+    }
+  ],
+  "workload_projection": [
+    {
+      "model": "TinyBERT-4L-312D",
+      "scenario": "encoder_seq128",
+      "fastest_at_closed_clock": "16x16",
+      "best_area_normalized": "8x8",
+      "lowest_vectorless_energy_proxy": "4x4",
+      "array_utilization": {
+        "4x4": 0.9949811794228356,
+        "8x8": 0.9850931677018634,
+        "16x16": 0.9546548956661316
+      }
+    },
+    {
+      "model": "TinyLlama-1.1B",
+      "scenario": "prefill_128",
+      "fastest_at_closed_clock": "16x16",
+      "best_area_normalized": "8x8",
+      "lowest_vectorless_energy_proxy": "4x4",
+      "array_utilization": {
+        "4x4": 1.0,
+        "8x8": 1.0,
+        "16x16": 1.0
+      }
+    },
+    {
+      "model": "TinyLlama-1.1B",
+      "scenario": "decode_1_ctx128",
+      "fastest_at_closed_clock": "16x16",
+      "best_area_normalized": "4x4",
+      "lowest_vectorless_energy_proxy": "4x4",
+      "array_utilization": {
+        "4x4": 0.25,
+        "8x8": 0.125,
+        "16x16": 0.0625
+      }
+    },
+    {
+      "model": "Qwen2.5-1.5B",
+      "scenario": "prefill_128",
+      "fastest_at_closed_clock": "16x16",
+      "best_area_normalized": "8x8",
+      "lowest_vectorless_energy_proxy": "4x4",
+      "array_utilization": {
+        "4x4": 1.0,
+        "8x8": 1.0,
+        "16x16": 1.0
+      }
+    },
+    {
+      "model": "Qwen2.5-1.5B",
+      "scenario": "decode_1_ctx128",
+      "fastest_at_closed_clock": "16x16",
+      "best_area_normalized": "4x4",
+      "lowest_vectorless_energy_proxy": "4x4",
+      "array_utilization": {
+        "4x4": 0.25,
+        "8x8": 0.125,
+        "16x16": 0.0625
+      }
+    }
+  ],
+  "real_tensor_validation": [
+    {
+      "model": "TinyBERT-4L-312D",
+      "status": "PASS",
+      "operation": "first_layer_q_projection",
+      "selected_gemm": {
+        "m": 16,
+        "k": 312,
+        "n": 64
+      },
+      "all_arrays_exact_int32": true,
+      "cosine_similarity": 0.9935067196616613,
+      "relative_rmse": 0.1140579239040098,
+      "array_results": {
+        "4x4": {
+          "exact_int32_match": true,
+          "tile_m_count": 4,
+          "tile_k_count": 78,
+          "tile_n_count": 16,
+          "tile_operations": 4992,
+          "useful_macs": 319488,
+          "physical_macs": 319488,
+          "compute_utilization": 1.0
+        },
+        "8x8": {
+          "exact_int32_match": true,
+          "tile_m_count": 2,
+          "tile_k_count": 39,
+          "tile_n_count": 8,
+          "tile_operations": 624,
+          "useful_macs": 319488,
+          "physical_macs": 319488,
+          "compute_utilization": 1.0
+        },
+        "16x16": {
+          "exact_int32_match": true,
+          "tile_m_count": 1,
+          "tile_k_count": 20,
+          "tile_n_count": 4,
+          "tile_operations": 80,
+          "useful_macs": 319488,
+          "physical_macs": 327680,
+          "compute_utilization": 0.975
+        }
+      }
+    },
+    {
+      "model": "TinyLlama-1.1B",
+      "status": "PASS",
+      "operation": "first_layer_q_projection",
+      "selected_gemm": {
+        "m": 16,
+        "k": 2048,
+        "n": 64
+      },
+      "all_arrays_exact_int32": true,
+      "cosine_similarity": 0.9977163626129348,
+      "relative_rmse": 0.0678469371000245,
+      "array_results": {
+        "4x4": {
+          "exact_int32_match": true,
+          "tile_m_count": 4,
+          "tile_k_count": 512,
+          "tile_n_count": 16,
+          "tile_operations": 32768,
+          "useful_macs": 2097152,
+          "physical_macs": 2097152,
+          "compute_utilization": 1.0
+        },
+        "8x8": {
+          "exact_int32_match": true,
+          "tile_m_count": 2,
+          "tile_k_count": 256,
+          "tile_n_count": 8,
+          "tile_operations": 4096,
+          "useful_macs": 2097152,
+          "physical_macs": 2097152,
+          "compute_utilization": 1.0
+        },
+        "16x16": {
+          "exact_int32_match": true,
+          "tile_m_count": 1,
+          "tile_k_count": 128,
+          "tile_n_count": 4,
+          "tile_operations": 512,
+          "useful_macs": 2097152,
+          "physical_macs": 2097152,
+          "compute_utilization": 1.0
+        }
+      }
+    },
+    {
+      "model": "Qwen2.5-1.5B",
+      "status": "PASS",
+      "operation": "first_layer_q_projection",
+      "selected_gemm": {
+        "m": 16,
+        "k": 1536,
+        "n": 64
+      },
+      "all_arrays_exact_int32": true,
+      "cosine_similarity": 0.9920996076736709,
+      "relative_rmse": 0.12615747188017937,
+      "array_results": {
+        "4x4": {
+          "exact_int32_match": true,
+          "tile_m_count": 4,
+          "tile_k_count": 384,
+          "tile_n_count": 16,
+          "tile_operations": 24576,
+          "useful_macs": 1572864,
+          "physical_macs": 1572864,
+          "compute_utilization": 1.0
+        },
+        "8x8": {
+          "exact_int32_match": true,
+          "tile_m_count": 2,
+          "tile_k_count": 192,
+          "tile_n_count": 8,
+          "tile_operations": 3072,
+          "useful_macs": 1572864,
+          "physical_macs": 1572864,
+          "compute_utilization": 1.0
+        },
+        "16x16": {
+          "exact_int32_match": true,
+          "tile_m_count": 1,
+          "tile_k_count": 96,
+          "tile_n_count": 4,
+          "tile_operations": 384,
+          "useful_macs": 1572864,
+          "physical_macs": 1572864,
+          "compute_utilization": 1.0
+        }
+      }
+    }
+  ],
+  "key_findings": [
+    "16x16 provides the lowest projected compute latency across the tested Transformer scenarios.",
+    "8x8 provides the best area-normalized throughput for the tested dense encoder and prefill workloads.",
+    "4x4 provides the best area-normalized efficiency for token-by-token decode because M=1 causes substantial idle PE capacity in larger arrays.",
+    "4x4 has the lowest vectorless-energy proxy across the tested scenarios.",
+    "TinyBERT, TinyLlama and Qwen2.5 real Q-projection tensors produced bit-exact INT32 results across 4x4, 8x8 and 16x16 software-tiled hardware mappings."
+  ],
+  "claim_boundaries": [
+    "Workload latency values are analytical compute-core projections, not measured end-to-end model inference latency.",
+    "Power and energy values use ORFS vectorless estimates and are not workload-activity-qualified measurements.",
+    "Real tensor validation uses software INT8/INT32 tiled execution and does not claim that the full Transformer model was executed by RTL.",
+    "Generated GDS evidence is not equivalent to foundry signoff DRC/LVS or tapeout readiness."
+  ]
+}

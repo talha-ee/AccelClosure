@@ -1,0 +1,208 @@
+{
+  "schema": "accelclosure.reference_catalog.v1",
+
+  "selection_policy": {
+    "architecture_grounding_preferred": true,
+    "closure_examples_preferred_for_failure_repair": true,
+    "historical_measurements_are_advisory_only": true,
+    "fresh_request_requires_fresh_eda": true,
+    "cross_configuration_ppa_reuse_allowed": false,
+    "reference_source_may_not_self_prove_closure": true
+  },
+
+  "references": [
+
+    {
+      "id": "gemmini_systolic_array_v1",
+
+      "kind": "GOLDEN_ARCHITECTURE_REFERENCE",
+
+      "name": "Berkeley Gemmini systolic-array architecture",
+
+      "source": {
+        "repository_path": "golden/sources/gemmini",
+        "git_commit": "8c3f9923a44a2fe2c7930587be297d6d4f8c09ca",
+        "card_id": "gemmini_systolic_array_v1"
+      },
+
+      "architecture": {
+        "family": "systolic_array",
+        "supported_dataflows": [
+          "weight_stationary",
+          "output_stationary"
+        ],
+        "reference_default_array": "16x16",
+        "reference_activation_precision": "INT8",
+        "reference_weight_precision": "INT8",
+        "reference_accumulator_precision": "INT32"
+      },
+
+      "evidence": {
+        "source_inspected": true,
+        "source_commit_pinned": true,
+        "local_full_execution_verified": false,
+        "accelclosure_physical_closure_result": false
+      },
+
+      "allowed_uses": [
+        "architecture_grounding",
+        "systolic_array_structure",
+        "dataflow_reasoning",
+        "datatype_invariants",
+        "design_contract_context",
+        "rtl_generation_context",
+        "closure_agent_context"
+      ],
+
+      "forbidden_uses": [
+        "reuse_published_or_historical_ppa_as_new_measurement",
+        "claim_fresh_timing_closure",
+        "claim_fresh_power",
+        "claim_fresh_area",
+        "claim_local_execution_verified"
+      ]
+    },
+
+    {
+      "id": "accelclosure_n16_150mhz_reference",
+
+      "kind": "ACCELCLOSURE_CLOSED_REFERENCE",
+
+      "name": "AccelClosure 16x16 Sky130 150 MHz closed reference",
+
+      "source": {
+        "summary": "results/closure/final_150mhz_closed/summary.json",
+        "run_record": "results/runs/final_150mhz_closed/run_record.json",
+        "rtl_directory": "rtl/revisions/v7_final_150mhz_closed"
+      },
+
+      "architecture": {
+        "family": "systolic_array",
+        "n": 16,
+        "dataflow": "weight_stationary",
+        "activation_precision": "INT8",
+        "weight_precision": "INT8",
+        "accumulator_precision": "INT32",
+        "technology": "sky130hd",
+        "target_frequency_mhz": 150.0
+      },
+
+      "evidence": {
+        "functional_verified": true,
+        "post_route_timing_closed": true,
+        "gds_generated": true
+      },
+
+      "allowed_uses": [
+        "closure_strategy_reference",
+        "pipeline_architecture_reference",
+        "physical_design_reference",
+        "failure_pattern_reference",
+        "agent_reasoning_example"
+      ],
+
+      "forbidden_uses": [
+        "reuse_ppa_for_different_n",
+        "reuse_ppa_for_different_frequency",
+        "reuse_ppa_for_fresh_run"
+      ]
+    },
+
+    {
+      "id": "accelclosure_n8_200mhz_product_proof",
+
+      "kind": "ACCELCLOSURE_CLOSED_REFERENCE",
+
+      "name": "AccelClosure 8x8 Sky130 200 MHz fresh product-flow proof",
+
+      "source": {
+        "run_id": "ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10",
+
+        "run_context": "results/runs/ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10/run_context.json",
+
+        "run_record": "results/runs/ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10/artifacts/run_record.json",
+
+        "final_summary": "results/runs/ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10/closure/iter1/final/summary.json",
+
+        "closure_improvement": "results/runs/ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10/closure/closure_improvement.json"
+      },
+
+      "architecture": {
+        "family": "systolic_array",
+        "n": 8,
+        "dataflow": "weight_stationary",
+        "activation_precision": "INT8",
+        "weight_precision": "INT8",
+        "accumulator_precision": "INT32",
+        "technology": "sky130hd",
+        "target_frequency_mhz": 200.0
+      },
+
+      "evidence": {
+        "iteration_0_functional_verified": true,
+        "iteration_0_timing_failed": true,
+        "agent_redesign_performed": true,
+        "iteration_1_functional_verified": true,
+        "post_route_timing_closed": true,
+        "gds_generated": true,
+        "run_record_evidence_complete": true
+      },
+
+      "allowed_uses": [
+        "full_agentic_closure_example",
+        "timing_failure_classification_reference",
+        "pipeline_redesign_reference",
+        "verification_reference",
+        "eda_recovery_reference",
+        "physical_closure_reference",
+        "provenance_reference"
+      ],
+
+      "forbidden_uses": [
+        "reuse_ppa_for_different_n",
+        "reuse_ppa_for_different_frequency",
+        "reuse_ppa_for_fresh_run"
+      ]
+    }
+  ],
+
+  "historical_research": {
+    "policy": {
+      "role": "ADVISORY_MEASURED_EVIDENCE",
+      "fresh_eda_required": true,
+      "automatic_metric_reuse": false
+    },
+
+    "gemmini_array_measurements": [
+      {
+        "n": 16,
+        "technology": "sky130",
+        "measurement_type": "hierarchical_synthesis",
+        "baseline_area_mm2": 3.8875,
+        "baseline_cells": 360326,
+        "optimized_area_mm2": 3.3632,
+        "optimized_cells": 304518
+      },
+
+      {
+        "n": 32,
+        "technology": "sky130",
+        "measurement_type": "hierarchical_synthesis",
+        "baseline_area_mm2": 15.5475,
+        "baseline_cells": 1441542,
+        "optimized_area_mm2": 13.4501,
+        "optimized_cells": 1210928
+      },
+
+      {
+        "n": 64,
+        "technology": "sky130",
+        "measurement_type": "hierarchical_synthesis",
+        "baseline_area_mm2": 47.2909,
+        "baseline_cells": 5656070,
+        "optimized_area_mm2": 41.6926,
+        "optimized_cells": 5098844
+      }
+    ]
+  }
+}

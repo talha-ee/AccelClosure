@@ -1,0 +1,5 @@
+source=ucb-bar/gemmini
+url=https://github.com/ucb-bar/gemmini.git
+branch=master
+commit=8c3f9923a44a2fe2c7930587be297d6d4f8c09ca
+retrieved=2026-09-05T21:07:15+05:00

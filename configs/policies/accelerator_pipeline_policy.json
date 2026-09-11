@@ -1,0 +1,33 @@
+{
+  "policy_id": "accelclosure_accelerator_pipeline_v1",
+  "scope": "performance-oriented synchronous accelerator RTL",
+
+  "principles": [
+    "A valid timing target must be treated as an architectural requirement, not merely an SDC value.",
+    "Do not solve timing failure by relaxing the user requested frequency.",
+    "Primary data inputs should not traverse a complete multiply-accumulate datapath before the first sequential boundary.",
+    "Arithmetic pipeline stages must be selected according to technology, precision, datapath width and measured timing.",
+    "Systolic activation and partial-sum propagation latencies must remain cycle-aligned.",
+    "Valid signals must be pipelined with the exact data transaction they describe.",
+    "Pipeline insertion must preserve mathematical functionality and dataflow semantics.",
+    "Every architecture-changing timing optimization must be functionally reverified before PPA comparison."
+  ],
+
+  "systolic_array_rules": {
+    "register_array_boundaries_when_required": true,
+    "allow_multiplier_pipeline": true,
+    "allow_accumulator_pipeline": true,
+    "activation_and_psum_hop_latency_must_match": true,
+    "weight_stationarity_must_be_preserved": true,
+    "external_wavefront_schedule_may_change_with_latency": true
+  },
+
+  "prohibited_shortcuts": [
+    "relax target clock to claim closure",
+    "false-path a genuine datapath",
+    "multicycle-path a genuine single-cycle operation",
+    "remove functional arithmetic",
+    "change INT8 or INT32 precision without authorization",
+    "replace systolic fabric with behavioral matrix multiplication"
+  ]
+}

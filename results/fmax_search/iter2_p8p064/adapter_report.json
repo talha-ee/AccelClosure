@@ -1,0 +1,17 @@
+{
+  "adapter": "AccelClosure EDA Artifact Adapter",
+  "adapter_version": "1.0",
+  "timestamp_utc": "2026-09-06T09:31:15.856887+00:00",
+  "failure_class": "EDA_INTEROPERABILITY",
+  "interface": "Yosys -> OpenROAD",
+  "transformation": "Remove signed qualifiers from structural input/output/wire declarations",
+  "source": "orfs_runs/results/sky130hd/accelclosure_ws_array/fmax_iter2_p8p064/1_2_yosys.v",
+  "backup": "results/fmax_search/iter2_p8p064/1_2_yosys_original.v",
+  "output": "results/fmax_search/iter2_p8p064/1_2_yosys_openroad_compatible.v",
+  "source_sha256": "32c538dfe0c0671ea64b95b7ff0bd8c2c1620c7ecb737952119c9e3084cbd5a5",
+  "output_sha256": "f64e6af4bc522f0d2d912bca57b588ed30a2ea6fdec7c474080218d89ddddf76",
+  "signed_declarations_removed": 8,
+  "rtl_modified": false,
+  "mapped_cell_logic_modified": false,
+  "requires_openroad_revalidation": true
+}

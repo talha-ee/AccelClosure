@@ -1,0 +1,29 @@
+{
+  "design": "accelclosure_ws_array",
+  "architecture": "16x16 INT8 weight-stationary systolic array",
+  "technology": "sky130hd",
+  "corner": "tt_025C_1v80",
+  "target_frequency_mhz": 150.0,
+  "target_period_ns": 6.667,
+  "input_output_delay_fraction": 0.20,
+
+  "post_synthesis": {
+    "area_um2": 1596175,
+    "area_mm2": 1.596175,
+    "instance_count": 120097,
+    "wns_ns": -1.16,
+    "tns_ns": -62.61,
+    "target_met": false
+  },
+
+  "critical_path": {
+    "startpoint": "act_data_in[103]",
+    "endpoint": "gen_pe_row[12].gen_pe_col[0].pe_inst.psum_out[30]",
+    "classification": "input_to_PE_MAC_register",
+    "observation": "Primary activation input traverses substantial PE arithmetic before reaching the partial-sum register."
+  },
+
+  "baseline_status": "TIMING_NOT_CLOSED",
+  "rtl_functionally_verified": true,
+  "rtl_frozen_before_closure": true
+}

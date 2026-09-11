@@ -1,0 +1,88 @@
+{
+  "schema": "accelclosure.accelerator_family.v1",
+
+  "product": "AccelClosure",
+
+  "design_family": "parameterized_systolic_array",
+
+  "description": "Agentic generation and physical design closure of configurable systolic-array AI accelerators.",
+
+  "array": {
+    "shape": "square",
+    "dimension_parameter": "N",
+    "minimum_n": 2,
+    "power_of_two_required": true,
+    "hardcoded_dimension": false
+  },
+
+  "dataflows": {
+    "weight_stationary": {
+      "supported": true,
+      "verification_status": "REFERENCE_CONFIGURATION_VERIFIED"
+    },
+    "output_stationary": {
+      "supported": false,
+      "verification_status": "NOT_YET_IMPLEMENTED"
+    },
+    "input_stationary": {
+      "supported": false,
+      "verification_status": "NOT_YET_IMPLEMENTED"
+    }
+  },
+
+  "arithmetic": {
+    "activation": [
+      "INT8"
+    ],
+    "weight": [
+      "INT8"
+    ],
+    "accumulator": [
+      "INT32"
+    ]
+  },
+
+  "technology": {
+    "sky130hd": {
+      "supported": true,
+      "physical_flow": "OpenROAD-flow-scripts"
+    }
+  },
+
+  "user_constraints": {
+    "array_dimension": true,
+    "target_frequency_mhz": true,
+    "dataflow": true,
+    "technology": true,
+    "optimization_objective": true
+  },
+
+  "optimization_objectives": [
+    "timing",
+    "area",
+    "balanced_ppa"
+  ],
+
+  "closure_rules": {
+    "never_relax_user_frequency_without_explicit_permission": true,
+    "never_claim_results_from_another_configuration": true,
+    "functional_verification_required_after_rtl_change": true,
+    "physical_metrics_must_come_from_eda_tools": true,
+    "agent_cannot_self_declare_closure": true
+  },
+
+  "reference_runs": [
+    {
+      "name": "ws_int8_n16_sky130_150mhz",
+      "array_n": 16,
+      "dataflow": "weight_stationary",
+      "activation": "INT8",
+      "weight": "INT8",
+      "accumulator": "INT32",
+      "technology": "sky130hd",
+      "target_frequency_mhz": 150.0,
+      "status": "POST_ROUTE_CLOSED",
+      "run_record": "results/runs/final_150mhz_closed/run_record.json"
+    }
+  ]
+}

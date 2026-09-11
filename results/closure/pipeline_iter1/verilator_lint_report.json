@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "verilator_path": "/usr/bin/verilator",
+  "command": [
+    "/usr/bin/verilator",
+    "--lint-only",
+    "--sv",
+    "-Wall",
+    "-Wno-fatal",
+    "--top-module",
+    "accelclosure_ws_array",
+    "/tmp/tmpzpr3om4f/accelclosure_ws_pe.sv",
+    "/tmp/tmpzpr3om4f/accelclosure_ws_array.sv"
+  ]
+}

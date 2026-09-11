@@ -1,0 +1,196 @@
+{
+  "schema": "accelclosure.automation_policy.v1",
+
+  "execution": {
+    "unique_run_directory_required": true,
+    "overwrite_existing_run_artifacts": false,
+    "preserve_every_iteration": true,
+    "maximum_closure_iterations": 3,
+    "stop_on_unknown_failure": true
+  },
+
+  "design_constraints": {
+    "supported_family_file": "configs/product/accelerator_family.json",
+    "pipeline_policy_file": "configs/product/pipeline_policy.json",
+    "clock_relaxation_allowed": false,
+    "technology_change_during_closure_allowed": false,
+    "objective_change_during_closure_allowed": false,
+    "reuse_metrics_from_other_configuration": false
+  },
+
+  "verification": {
+    "functional_verification_required_before_eda": true,
+    "lint_required_before_eda": true,
+    "lint_warnings_allowed": 0,
+    "lint_errors_allowed": 0,
+    "rtl_hash_freeze_required": true,
+    "rtl_hash_gate_required_before_eda": true,
+    "reverify_after_every_rtl_change": true,
+    "initiation_interval_must_remain_one": true
+  },
+
+  "timing": {
+    "prelayout_sta_required": true,
+    "physical_design_requires_prelayout_target_pass": true,
+    "same_clock_constraint_all_iterations": true,
+    "post_route_timing_required_for_final_closure": true,
+
+    "post_synthesis_pass_rule": {
+      "worst_setup_slack_ns_min": 0.0,
+      "tns_ns": 0.0
+    },
+
+    "post_route_pass_rule": {
+      "worst_setup_slack_ns_min": 0.0,
+      "tns_ns": 0.0,
+      "setup_violation_count": 0,
+      "hold_violation_count": 0
+    },
+
+    "official_final_timing_source": "ORFS final post-route extracted report",
+
+    "wns_interpretation": "OpenROAD report_wns reports violation WNS and may show 0.00 when timing is met. Use report_worst_slack for positive margin."
+  },
+
+  "closure_agent": {
+    "allowed_failure_class": "TIMING_ARCHITECTURE",
+
+    "invoke_only_when": [
+      "functional_verification_passed",
+      "lint_passed",
+      "rtl_hash_gate_passed",
+      "measured_sta_failed_target",
+      "failure_is_not_infrastructure",
+      "failure_is_not_tool_interoperability"
+    ],
+
+    "must_preserve": [
+      "requested_frequency",
+      "technology",
+      "dataflow",
+      "precision",
+      "initiation_interval"
+    ],
+
+    "required_after_redesign": [
+      "lint",
+      "functional_regression",
+      "rtl_hash_freeze",
+      "synthesis",
+      "sta"
+    ],
+
+    "never_claim_timing_closed_before_eda": true
+  },
+
+  "eda": {
+    "orfs_image": "openroad/orfs@sha256:4886dd9c9723ea5539c2bfc1d6ceaf556f71f5827908c569523e430656ecec5c",
+
+    "mapped_netlist_adapter": {
+      "enabled": true,
+      "failure_class": "EDA_INTEROPERABILITY",
+      "trigger": "OpenROAD STA-0171 combined with signed structural declarations in Yosys mapped netlist",
+      "allowed_transformation": "remove signed qualifiers only from mapped structural input/output/wire declarations",
+      "source_rtl_modification_allowed": false,
+      "mapped_logic_modification_allowed": false,
+      "backup_required": true,
+      "hash_provenance_required": true,
+      "openroad_revalidation_required": true
+    },
+
+    "cts_runtime_recovery": {
+      "enabled": true,
+      "trigger": "repeatable child killed: illegal instruction during CTS post-repair block",
+      "retry_original_flow_count": 1,
+      "workaround_after_repeat": "SKIP_CTS_REPAIR_TIMING=1",
+      "clock_tree_synthesis_must_have_completed": true,
+      "record_workaround_in_provenance": true,
+      "post_route_setup_revalidation_required": true,
+      "post_route_hold_revalidation_required": true,
+      "workaround_does_not_count_as_timing_closure": true
+    }
+  },
+
+  "failure_classification": {
+    "TIMING_ARCHITECTURE": {
+      "may_modify_rtl": true,
+      "invoke_closure_agent": true
+    },
+
+    "FUNCTIONAL_RTL": {
+      "may_modify_rtl": true,
+      "invoke_timing_closure_agent": false,
+      "requires_functional_repair_first": true
+    },
+
+    "EDA_INTEROPERABILITY": {
+      "may_modify_source_rtl": false,
+      "invoke_closure_agent": false,
+      "use_known_adapter_if_signature_matches": true
+    },
+
+    "EDA_RUNTIME": {
+      "may_modify_source_rtl": false,
+      "invoke_closure_agent": false,
+      "retry_or_apply_recorded_runtime_workaround": true
+    },
+
+    "INFRASTRUCTURE_AUTH": {
+      "may_modify_source_rtl": false,
+      "invoke_closure_agent": false,
+      "stop_and_restore_environment": true
+    },
+
+    "UNKNOWN": {
+      "may_modify_source_rtl": false,
+      "invoke_closure_agent": false,
+      "stop_automatic_execution": true
+    }
+  },
+
+  "physical_design": {
+    "run_only_after_verified_timing_candidate": true,
+    "detailed_route_violation_target": 0,
+    "antenna_net_violation_target": 0,
+    "antenna_pin_violation_target": 0,
+    "gds_required_for_completed_run": true
+  },
+
+  "ppa_reporting": {
+    "keep_synthesis_cell_area_separate": true,
+    "keep_routed_cell_area_separate": true,
+    "keep_core_area_separate": true,
+
+    "compare_architectural_area_only_at_same_eda_stage": true,
+
+    "official_power_metric": "final vectorless report_power total",
+
+    "power_label": "vectorless estimated post-route power",
+
+    "keep_ir_analysis_power_separate": true,
+
+    "fmax_label": "STA-estimated Fmax",
+
+    "never_claim_silicon_frequency": true,
+    "never_claim_workload_measured_power_without_activity_data": true
+  },
+
+  "claim_discipline": {
+    "openroad_route_drc_is_not_foundry_signoff_drc": true,
+    "gds_generation_is_not_tapeout_signoff": true,
+    "foundry_drc_lvs_required_for_tapeout_ready_claim": true,
+    "unmeasured_results_must_not_be_invented": true,
+    "tool_measured_results_are_authoritative": true
+  },
+
+  "evidence": {
+    "run_record_required": true,
+    "rtl_sha256_required": true,
+    "policy_sha256_required": true,
+    "tool_versions_required": true,
+    "agent_reasoning_summary_required": true,
+    "failure_classification_required": true,
+    "parent_iteration_link_required": true,
+    "final_artifact_hashes_required": true
+  }
+}

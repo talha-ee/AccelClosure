@@ -1,0 +1,59 @@
+provider:
+  head_ip: ${THIS_MACHINE}
+
+auth:
+  ssh_user: ${USER}
+  ssh_private_key: ~/.ssh/chia_gcp
+
+available_node_types:
+  hello_verilator:
+    resources: {"verilator_run": 1}
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: "accelclosure-verilator:local"
+      pull_before_run: false
+      container_name: "chia-verilator-${USER}"
+      run_options:
+        - --ulimit nofile=65536:65536
+
+
+
+  yosys_synth:
+    resources: {"yosys_run": 1}
+    worker_setup_commands:
+      - "source ~/.bashrc"
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: "accelclosure-yosys:local"
+      pull_before_run: false
+      container_name: "chia-yosys-${USER}"
+
+  accelclosure_llm:
+    resources: {"opencode_creds": 1}
+    worker_setup_commands:
+      - "source ~/.bashrc"
+    num_workers: 1
+    compatible_ips: ["${THIS_MACHINE}"]
+    docker:
+      image: "ghcr.io/ucb-bar/chia-opencode:latest"
+      container_name: "chia-accelclosure-opencode-${USER}"
+      run_options:
+        - "-v ${HOME}/.config/gcloud:/home/ray/.config/gcloud"
+        - "-e GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT}"
+        - "-e VERTEX_LOCATION=global"
+
+head_env_commands:
+  - "source ~/.bashrc && conda activate chia_env"
+
+head_setup_commands:
+  - "source ~/.bashrc && conda activate chia_env"
+
+head_start_ray_commands:
+  - "source ~/.bashrc && conda activate chia_env && ray stop"
+  - "source ~/.bashrc && conda activate chia_env && ray start --head --port=6379 --include-dashboard=True --dashboard-agent-listen-port=0"
+
+worker_start_ray_commands:
+  - "ray stop"
+  - "ray start --address=$RAY_HEAD_IP:6379 --dashboard-agent-listen-port=0"

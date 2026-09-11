@@ -1,0 +1,25 @@
+ACCELCLOSURE CLOSURE ITERATION 0
+
+Target technology: sky130hd
+Target frequency: 150 MHz
+Target period: 6.667 ns
+Dataflow: weight-stationary
+Array: 16x16
+Input: INT8
+Weight: INT8
+Accumulator: INT32
+
+ORFS:
+openroad/orfs@sha256:4886dd9c9723ea5539c2bfc1d6ceaf556f71f5827908c569523e430656ecec5c
+
+RTL SHA256:
+8a5ee46b1a04b389d8f81b1237f80b171710d7596f474c6be6fc9c38a9d89e4f  rtl/accelclosure_ws_pe.sv
+80e23c0ccfa54b33614512afa997edb662baac3fd66d89cc8a5d8930780732ed  rtl/accelclosure_ws_array.sv
+
+Constraint SHA256:
+c24de44cbf2c62f4ea656f9a4238d96f09d0d1c1c97182748464859fcddb77ad  configs/orfs/sky130hd/iter0_150mhz/constraint.sdc
+
+Status: PRE_EDA
+Timing achieved: NOT_MEASURED
+Area: NOT_MEASURED
+Power: NOT_MEASURED

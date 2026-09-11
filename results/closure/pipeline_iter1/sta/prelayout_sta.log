@@ -1,0 +1,110 @@
+OpenROAD 26Q3-1867-g84e3ff1eb2 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+============================================================
+ ACCELCLOSURE PIPELINED ITERATION 1 STA
+============================================================
+DESIGN_NAME=accelclosure_ws_array
+TARGET_PERIOD_NS=6.667
+TARGET_FREQUENCY_MHZ=150.0
+CORNER=sky130hd_tt_025C_1v80
+
+================ DESIGN AREA =================
+Design area 1668438 um^2 100% utilization.
+
+================ DATABASE INSTANCE COUNT =================
+ACCELCLOSURE_INSTANCE_COUNT=133621
+
+================ CLOCK =================
+Clock                   Period          Waveform
+----------------------------------------------------
+core_clock                6.67        0.00      3.33
+
+================ WORST SETUP SLACK =================
+worst slack max 2.41
+
+================ WNS =================
+wns max 0.00
+
+================ TNS =================
+tns max 0.00
+
+================ WORST SETUP PATH =================
+Startpoint: gen_pe_row[10].gen_pe_col[5].pe_inst.weight_reg[2]$_DFFE_PN0P_
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: gen_pe_row[10].gen_pe_col[5].pe_inst.product_reg[15]$_DFF_PN0_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+      Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------
+             0.0000    0.0000    0.0000   clock core_clock (rise edge)
+                       0.0000    0.0000   clock network delay (ideal)
+             0.0000    0.0000    0.0000 ^ gen_pe_row[10].gen_pe_col[5].pe_inst.weight_reg[2]$_DFFE_PN0P_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.0132    0.0860    0.3887    0.3887 v gen_pe_row[10].gen_pe_col[5].pe_inst.weight_reg[2]$_DFFE_PN0P_/Q (sky130_fd_sc_hd__dfrtp_1)
+                                          gen_pe_row[10].gen_pe_col[5].pe_inst.weight_reg[2] (net)
+             0.0860    0.0000    0.3887 v _190392_/B (sky130_fd_sc_hd__and2_1)
+   0.0066    0.0521    0.1867    0.5754 v _190392_/X (sky130_fd_sc_hd__and2_1)
+                                          _019377_ (net)
+             0.0521    0.0000    0.5754 v _222500_/A (sky130_fd_sc_hd__fa_1)
+   0.0045    0.0802    0.4243    0.9997 v _222500_/COUT (sky130_fd_sc_hd__fa_1)
+                                          _126850_ (net)
+             0.0802    0.0000    0.9997 v _222525_/CIN (sky130_fd_sc_hd__fa_1)
+   0.0066    0.0977    0.4651    1.4648 v _222525_/SUM (sky130_fd_sc_hd__fa_1)
+                                          _106293_ (net)
+             0.0977    0.0000    1.4648 v _213486_/A (sky130_fd_sc_hd__fa_1)
+   0.0062    0.0841    0.5689    2.0337 ^ _213486_/SUM (sky130_fd_sc_hd__fa_1)
+                                          _106297_ (net)
+             0.0841    0.0000    2.0337 ^ _220343_/B (sky130_fd_sc_hd__fa_1)
+   0.0029    0.0776    0.4162    2.4498 v _220343_/SUM (sky130_fd_sc_hd__fa_1)
+                                          _122471_ (net)
+             0.0776    0.0000    2.4498 v _234276_/A (sky130_fd_sc_hd__ha_1)
+   0.0088    0.0821    0.3352    2.7850 v _234276_/SUM (sky130_fd_sc_hd__ha_1)
+                                          _036571_ (net)
+             0.0821    0.0000    2.7850 v _152902_/A1 (sky130_fd_sc_hd__a21oi_1)
+   0.0071    0.1907    0.1940    2.9790 ^ _152902_/Y (sky130_fd_sc_hd__a21oi_1)
+                                          _079035_ (net)
+             0.1907    0.0000    2.9790 ^ _152903_/A2 (sky130_fd_sc_hd__o21bai_1)
+   0.0022    0.0457    0.0785    3.0575 v _152903_/Y (sky130_fd_sc_hd__o21bai_1)
+                                          _079036_ (net)
+             0.0457    0.0000    3.0575 v _152904_/A2 (sky130_fd_sc_hd__a21oi_1)
+   0.0071    0.1900    0.1970    3.2545 ^ _152904_/Y (sky130_fd_sc_hd__a21oi_1)
+                                          _079037_ (net)
+             0.1900    0.0000    3.2545 ^ _152905_/A (sky130_fd_sc_hd__nor2b_1)
+   0.0023    0.0493    0.0660    3.3205 v _152905_/Y (sky130_fd_sc_hd__nor2b_1)
+                                          _079038_ (net)
+             0.0493    0.0000    3.3205 v _152906_/A2 (sky130_fd_sc_hd__o21a_1)
+   0.0044    0.0437    0.1725    3.4930 v _152906_/X (sky130_fd_sc_hd__o21a_1)
+                                          _079039_ (net)
+             0.0437    0.0000    3.4930 v _152909_/A3 (sky130_fd_sc_hd__o31a_1)
+   0.0044    0.0562    0.2410    3.7340 v _152909_/X (sky130_fd_sc_hd__o31a_1)
+                                          _079042_ (net)
+             0.0562    0.0000    3.7340 v _205327_/A4 (sky130_fd_sc_hd__o41ai_1)
+   0.0047    0.3352    0.2905    4.0244 ^ _205327_/Y (sky130_fd_sc_hd__o41ai_1)
+                                          _062915_ (net)
+             0.3352    0.0000    4.0244 ^ _205328_/B (sky130_fd_sc_hd__xnor2_1)
+   0.0020    0.1022    0.1531    4.1775 ^ _205328_/Y (sky130_fd_sc_hd__xnor2_1)
+                                          _048001_ (net)
+             0.1022    0.0000    4.1775 ^ gen_pe_row[10].gen_pe_col[5].pe_inst.product_reg[15]$_DFF_PN0_/D (sky130_fd_sc_hd__dfrtp_1)
+                                 4.1775   data arrival time
+
+             0.0000    6.6670    6.6670   clock core_clock (rise edge)
+                       0.0000    6.6670   clock network delay (ideal)
+                       0.0000    6.6670   clock reconvergence pessimism
+                                 6.6670 ^ gen_pe_row[10].gen_pe_col[5].pe_inst.product_reg[15]$_DFF_PN0_/CLK (sky130_fd_sc_hd__dfrtp_1)
+                      -0.0799    6.5871   library setup time
+                                 6.5871   data required time
+-------------------------------------------------------------------------------
+                                 6.5871   data required time
+                                -4.1775   data arrival time
+-------------------------------------------------------------------------------
+                                 2.4095   slack (MET)
+
+
+
+================ MINIMUM CLOCK PERIOD =================
+core_clock period_min = 4.26 fmax = 234.88
+
+ACCELCLOSURE_PIPELINE_ITER1_STA_COMPLETE

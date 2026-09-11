@@ -1,0 +1,7 @@
+{
+  "source_report": "results/benchmarks/real_models/final_benchmark_report.json",
+  "source_report_sha256": "d6e46f4981a279eeefdd43c33e14d431d16836f7274edfceade632d2c6466cab",
+  "source_report_status": "PASS",
+  "figure_count": 6,
+  "claim_boundary": "Figures are derived from the frozen final benchmark report. Workload values remain analytical compute-core projections and power remains a vectorless ORFS estimate."
+}

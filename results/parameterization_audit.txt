@@ -1,0 +1,54 @@
+agents/rtl_repair_agent.py:87:2. Preserve the 16x16 parameterizable weight-stationary architecture.
+agents/pipeline_closure_agent.py:131:150 MHz requirement.
+agents/pipeline_closure_agent.py:137:The target clock MUST remain 6.667 ns / 150 MHz.
+agents/pipeline_closure_agent.py:169:- 16x16 parameterizable weight-stationary systolic architecture.
+agents/pipeline_closure_agent.py:247:Do not claim that 150 MHz has been achieved.
+agents/pipeline_closure_agent.py:293:    "Sky130 synthesis at 6.667 ns",
+agents/pipeline_closure_agent.py:294:    "OpenROAD STA at 6.667 ns"
+agents/pipeline_closure_agent.py:437:        / "iter0_150mhz"
+agents/pipeline_closure_agent.py:646:            6.667,
+agents/pipeline_closure_agent.py:649:            150.0,
+agents/rtl_generator_agent.py:138:N      = 16
+agents/rtl_generator_agent.py:204:- N will initially be tested at small sizes and elaborated at N=16.
+src/build_run_record.py:13:    / "results/closure/final_150mhz_closed/summary.json"
+src/build_run_record.py:33:    / "results/closure/final_150mhz_closed/6_finish.rpt"
+src/build_run_record.py:40:    "pipeline_iter1_150mhz/"
+src/build_run_record.py:49:    / "results/runs/final_150mhz_closed/run_record.json"
+src/build_run_record.py:86:    summary["target"]["frequency_mhz"] == 150.0,
+src/build_run_record.py:201:        "accelerator": "16x16 INT8 weight-stationary systolic array",
+src/build_run_record.py:203:        "target_frequency_mhz": 150.0
+src/build_run_record.py:235:            "Full N=16 GEMM regression pending"
+src/build_run_record.py:334:        "150 MHz timing target. "
+src/request_frontend.py:142:            "Example: 8x8 or 16x16."
+src/request_frontend.py:174:            "Example: 150 MHz."
+src/reference_context_builder.py:165:        "16x16", "32x32", "64x64"
+src/contract_validator.py:264:        "ensure sky130 150 mhz",
+src/contract_validator.py:265:        "guarantee 150 mhz",
+src/contract_validator.py:266:        "guarantee 150 mhz operation",
+src/accelclosure_cli.py:14:    / "results/closure/final_150mhz_closed/summary.json"
+src/accelclosure_cli.py:19:    / "results/runs/final_150mhz_closed/run_record.json"
+src/accelclosure_cli.py:159:        f"   150 MHz timing result: "
+src/accelclosure_cli.py:266:        "150 MHz target preserved",
+src/accelclosure_cli.py:269:            == 150.0
+tests/run_yosys_generic.py:45:        netlist_path = work / "synthesized_16x16.v"
+tests/run_yosys_generic.py:64:write_verilog -noattr synthesized_16x16.v
+tests/run_yosys_generic.py:181:        "[AccelClosure] Dispatching 16x16 "
+tests/run_yosys_generic.py:199:        / "yosys_generic_16x16_report.json"
+tests/run_yosys_generic.py:204:        / "yosys_generic_16x16.log"
+configs/product/accelerator_family.json:76:      "name": "ws_int8_n16_sky130_150mhz",
+configs/product/accelerator_family.json:83:      "target_frequency_mhz": 150.0,
+configs/product/accelerator_family.json:85:      "run_record": "results/runs/final_150mhz_closed/run_record.json"
+configs/orfs/sky130hd/pipeline_iter1_150mhz/analysis/prelayout_sta.tcl:4:  /workspace/AccelClosure/orfs_runs/results/sky130hd/accelclosure_ws_array/pipeline_iter1_150mhz/1_synth.odb
+configs/orfs/sky130hd/pipeline_iter1_150mhz/analysis/prelayout_sta.tcl:7:  /workspace/AccelClosure/orfs_runs/results/sky130hd/accelclosure_ws_array/pipeline_iter1_150mhz/1_synth.sdc
+configs/orfs/sky130hd/pipeline_iter1_150mhz/analysis/prelayout_sta.tcl:17:puts "TARGET_PERIOD_NS=6.667"
+configs/orfs/sky130hd/pipeline_iter1_150mhz/analysis/prelayout_sta.tcl:18:puts "TARGET_FREQUENCY_MHZ=150.0"
+configs/orfs/sky130hd/iter0_150mhz/config.mk:11:  /workspace/AccelClosure/configs/orfs/sky130hd/iter0_150mhz/constraint.sdc
+configs/orfs/sky130hd/iter0_150mhz/config.mk:13:# Conservative starting point for a regular 16x16 compute fabric.
+configs/orfs/sky130hd/iter0_150mhz/constraint.sdc:5:set clk_period    6.667
+configs/orfs/sky130hd/iter0_150mhz/analysis/prelayout_sta.tcl:4:  /workspace/AccelClosure/orfs_runs/results/sky130hd/accelclosure_ws_array/iter0_150mhz/1_synth.odb
+configs/orfs/sky130hd/iter0_150mhz/analysis/prelayout_sta.tcl:7:  /workspace/AccelClosure/orfs_runs/results/sky130hd/accelclosure_ws_array/iter0_150mhz/1_synth.sdc
+configs/orfs/sky130hd/iter0_150mhz/analysis/prelayout_sta.tcl:18:puts "TARGET_PERIOD_NS=6.667"
+scripts/run_pipeline_iter1_150mhz.sh:9:CONFIG="/workspace/AccelClosure/configs/orfs/sky130hd/iter0_150mhz/config.mk"
+scripts/run_pipeline_iter1_150mhz.sh:11:VARIANT="pipeline_iter1_150mhz"
+scripts/run_pipeline_iter1_150mhz.sh:25:echo " Target: 150 MHz / 6.667 ns"
+scripts/gui/open_final.tcl:1:read_db /workspace/AccelClosure/orfs_runs/results/sky130hd/accelclosure_ws_array/pipeline_iter1_150mhz/6_final.odb

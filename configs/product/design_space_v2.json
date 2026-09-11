@@ -1,0 +1,132 @@
+{
+  "schema": "accelclosure.design_space.v2",
+
+  "product": {
+    "name": "AccelClosure",
+    "description": "Agentic prompt-to-silicon co-design and closure framework for configurable systolic AI accelerators",
+    "architecture_is_not_hardcoded_to_reference_points": true
+  },
+
+  "geometry": {
+    "type": "configurable_2d_systolic_array",
+
+    "rows": {
+      "minimum": 2,
+      "maximum_product_scope": 128
+    },
+
+    "columns": {
+      "minimum": 2,
+      "maximum_product_scope": 128
+    },
+
+    "square_arrays_supported_by_design_space": true,
+    "rectangular_arrays_supported_by_design_space": true,
+
+    "example_geometries": [
+      "4x4",
+      "8x8",
+      "16x16",
+      "32x32",
+      "64x64",
+      "128x128",
+      "8x16",
+      "16x32",
+      "32x64"
+    ]
+  },
+
+  "dataflows": {
+    "ws": {
+      "name": "weight_stationary",
+      "stationary_tensor": "weights",
+      "product_design_space": true,
+      "current_backend_status": "IMPLEMENTED_REFERENCE_BACKEND"
+    },
+
+    "os": {
+      "name": "output_stationary",
+      "stationary_tensor": "partial_sums",
+      "product_design_space": true,
+      "current_backend_status": "PLUGIN_EXTENSION"
+    },
+
+    "is": {
+      "name": "input_stationary",
+      "stationary_tensor": "activations",
+      "product_design_space": true,
+      "current_backend_status": "PLUGIN_EXTENSION"
+    }
+  },
+
+  "arithmetic": {
+    "default": "int8",
+
+    "types": {
+      "int8": {
+        "activation_bits": 8,
+        "weight_bits": 8,
+        "accumulator_bits": 32,
+        "current_backend_status": "IMPLEMENTED_REFERENCE_BACKEND"
+      },
+
+      "int4": {
+        "current_backend_status": "ARITHMETIC_PLUGIN_EXTENSION"
+      },
+
+      "int16": {
+        "current_backend_status": "ARITHMETIC_PLUGIN_EXTENSION"
+      },
+
+      "bf16": {
+        "current_backend_status": "ARITHMETIC_PLUGIN_EXTENSION"
+      }
+    }
+  },
+
+  "objectives": [
+    "latency",
+    "area",
+    "energy",
+    "balanced"
+  ],
+
+  "technology": {
+    "current_physical_backend": "sky130hd",
+    "technology_backend_is_pluggable": true
+  },
+
+  "validated_physical_references": [
+    {
+      "rows": 4,
+      "columns": 4,
+      "dataflow": "ws",
+      "arithmetic": "int8",
+      "evidence": "POST_ROUTE_PHYSICALLY_CLOSED"
+    },
+
+    {
+      "rows": 8,
+      "columns": 8,
+      "dataflow": "ws",
+      "arithmetic": "int8",
+      "evidence": "POST_ROUTE_PHYSICALLY_CLOSED"
+    },
+
+    {
+      "rows": 16,
+      "columns": 16,
+      "dataflow": "ws",
+      "arithmetic": "int8",
+      "evidence": "POST_ROUTE_PHYSICALLY_CLOSED"
+    }
+  ],
+
+  "claim_policy": {
+    "design_space_capability_is_not_physical_evidence": true,
+    "never_reuse_ppa_across_different_configurations": true,
+    "every_new_configuration_requires_its_own_verification": true,
+    "every_physical_claim_requires_real_eda_evidence": true,
+    "never_imply_foundry_signoff_from_gds_generation": true
+  }
+}

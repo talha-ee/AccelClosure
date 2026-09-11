@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT="$(
+  cd "$(dirname "${BASH_SOURCE[0]}")/.."
+  pwd
+)"
+
+export ACCELCLOSURE_ROOT="$ROOT"
+
+# ------------------------------------------------------------
+# Autonomous product flow.
+# ------------------------------------------------------------
+
+if [ "${1:-}" = "run" ]; then
+
+    shift
+
+    exec python \
+      "$ROOT/src/orchestrator.py" \
+      "$@"
+fi
+
+# ------------------------------------------------------------
+# Existing evidence/status commands remain available.
+# They will be generalized to run-local evidence next.
+# ------------------------------------------------------------
+
+exec python \
+  "$ROOT/src/accelclosure_cli.py" \
+  "$@"

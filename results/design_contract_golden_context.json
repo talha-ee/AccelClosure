@@ -1,0 +1,200 @@
+{
+  "query": "Design an energy-efficient 16x16 INT8 weight-stationary systolic-array accelerator for GEMM and LLM inference targeting Sky130 with a target frequency of at least 150 MHz.",
+  "status": "REFERENCE_FOUND",
+  "reference": {
+    "id": "gemmini_systolic_array_v1",
+    "title": "Berkeley Gemmini Systolic Array Architecture",
+    "retrieval_score": 2.1917,
+    "source": {
+      "repository": "https://github.com/ucb-bar/gemmini.git",
+      "branch": "master",
+      "commit": "8c3f9923a44a2fe2c7930587be297d6d4f8c09ca"
+    },
+    "reference_status": {
+      "source_inspected": true,
+      "locally_execution_verified": false,
+      "notes": "Architecture and configuration rules extracted from pinned upstream Gemmini source. Do not claim local execution verification until explicitly tested."
+    }
+  },
+  "architecture": {
+    "type": "parameterized_systolic_array",
+    "hierarchy": [
+      "MacUnit",
+      "PE",
+      "Tile",
+      "Mesh",
+      "MeshWithDelays"
+    ],
+    "supported_dataflows": [
+      "OS",
+      "WS",
+      "BOTH"
+    ]
+  },
+  "architectural_invariants": [
+    {
+      "rule": "inputType.getWidth == weightType.getWidth",
+      "reason": "Required by GemminiArrayConfig"
+    },
+    {
+      "rule": "meshColumns * tileColumns == meshRows * tileRows",
+      "reason": "Current Gemmini implementation requires a square systolic array"
+    },
+    {
+      "rule": "meshColumns * tileColumns >= 2",
+      "reason": "Current implementation requires array dimension of at least two"
+    },
+    {
+      "rule": "isPow2(meshColumns * tileColumns)",
+      "reason": "Current implementation requires power-of-two array dimension"
+    },
+    {
+      "rule": "sp_bank_entries % (meshRows * tileRows) == 0",
+      "reason": "Scratchpad bank rows must align to systolic-array dimension"
+    },
+    {
+      "rule": "acc_bank_entries % (meshRows * tileRows) == 0",
+      "reason": "Accumulator bank rows must align to systolic-array dimension"
+    }
+  ],
+  "agent_instruction": "Use this reference as architectural guidance. Preserve the listed invariants unless the task explicitly requires redesigning an invariant. Do not blindly copy Gemmini. Adapt the proven architectural principles to the requested accelerator and validate generated RTL independently.",
+  "selected_topics": [
+    "dataflow",
+    "array",
+    "precision",
+    "matmul",
+    "pipeline",
+    "config"
+  ],
+  "selected_source_files": [
+    "src/main/scala/gemmini/Dataflow.scala",
+    "src/main/scala/gemmini/PE.scala",
+    "src/main/scala/gemmini/MeshWithDelays.scala",
+    "src/main/scala/gemmini/Tile.scala",
+    "src/main/scala/gemmini/Mesh.scala",
+    "src/main/scala/gemmini/Arithmetic.scala",
+    "src/main/scala/gemmini/GemminiConfigs.scala"
+  ],
+  "source_context": [
+    {
+      "file": "src/main/scala/gemmini/Dataflow.scala",
+      "excerpts": [
+        {
+          "line_start": 1,
+          "line_end": 8,
+          "text": "1: \n2: package gemmini\n3: \n4: object Dataflow extends Enumeration {\n5:   val OS, WS, BOTH = Value\n6: }\n7: \n8: "
+        }
+      ]
+    },
+    {
+      "file": "src/main/scala/gemmini/PE.scala",
+      "excerpts": [
+        {
+          "line_start": 7,
+          "line_end": 21,
+          "text": "7: class PEControl[T <: Data : Arithmetic](accType: T) extends Bundle {\n8:   val dataflow = UInt(1.W) // TODO make this an Enum\n9:   val propagate = UInt(1.W) // Which register should be propagated (and which should be accumulated)?\n10:   val shift = UInt(log2Up(accType.getWidth).W) // TODO this isn't correct for Floats\n11: \n12: }\n13: \n14: class MacUnit[T <: Data](inputType: T, weightType: T, cType: T, dType: T) (implicit ev: Arithmetic[T]) extends Module {\n15:   import ev._\n16:   val io = IO(new Bundle {\n17:     val in_a  = Input(inputType)\n18:     val in_b  = Input(weightType)\n19:     val in_c  = Input(cType)\n20:     val out_d = Output(dType)\n21:   })"
+        },
+        {
+          "line_start": 24,
+          "line_end": 38,
+          "text": "24: }\n25: \n26: // TODO update documentation\n27: /**\n28:   * A PE implementing a MAC operation. Configured as fully combinational when integrated into a Mesh.\n29:   * @param width Data width of operands\n30:   */\n31: class PE[T <: Data](inputType: T, weightType: T, outputType: T, accType: T, df: Dataflow.Value, max_simultaneous_matmuls: Int)\n32:                    (implicit ev: Arithmetic[T]) extends Module { // Debugging variables\n33:   import ev._\n34: \n35:   val io = IO(new Bundle {\n36:     val in_a = Input(inputType)\n37:     val in_b = Input(outputType)\n38:     val in_d = Input(outputType)"
+        },
+        {
+          "line_start": 51,
+          "line_end": 72,
+          "text": "51: \n52:     val in_valid = Input(Bool())\n53:     val out_valid = Output(Bool())\n54: \n55:     val bad_dataflow = Output(Bool())\n56:   })\n57: \n58:   val cType = if (df == Dataflow.WS) inputType else accType\n59: \n60:   // When creating PEs that support multiple dataflows, the\n61:   // elaboration/synthesis tools often fail to consolidate and de-duplicate\n62:   // MAC units. To force mac circuitry to be re-used, we create a \"mac_unit\"\n63:   // module here which just performs a single MAC operation\n64:   val mac_unit = Module(new MacUnit(inputType, weightType,\n65:     if (df == Dataflow.WS) outputType else accType, outputType))\n66: \n67:   val a  = io.in_a\n68:   val b  = io.in_b\n69:   val d  = io.in_d\n70:   val c1 = Reg(cType)\n71:   val c2 = Reg(cType)\n72:   val dataflow = io.in_control.dataflow"
+        },
+        {
+          "line_start": 87,
+          "line_end": 125,
+          "text": "87:   mac_unit.io.in_a := a\n88: \n89:   val last_s = RegEnable(prop, valid)\n90:   val flip = last_s =/= prop\n91:   val shift_offset = Mux(flip, shift, 0.U)\n92: \n93:   // Which dataflow are we using?\n94:   val OUTPUT_STATIONARY = Dataflow.OS.id.U(1.W)\n95:   val WEIGHT_STATIONARY = Dataflow.WS.id.U(1.W)\n96: \n97:   // Is c1 being computed on, or propagated forward (in the output-stationary dataflow)?\n98:   val COMPUTE = 0.U(1.W)\n99:   val PROPAGATE = 1.U(1.W)\n100: \n101:   io.bad_dataflow := false.B\n102:   when ((df == Dataflow.OS).B || ((df == Dataflow.BOTH).B && dataflow === OUTPUT_STATIONARY)) {\n103:     when(prop === PROPAGATE) {\n104:       io.out_c := (c1 >> shift_offset).clippedToWidthOf(outputType)\n105:       io.out_b := b\n106:       mac_unit.io.in_b := b.asTypeOf(weightType)\n107:       mac_unit.io.in_c := c2\n108:       c2 := mac_unit.io.out_d\n109:       c1 := d.withWidthOf(cType)\n110:     }.otherwise {\n111:       io.out_c := (c2 >> shift_offset).clippedToWidthOf(outputType)\n112:       io.out_b := b\n113:       mac_unit.io.in_b := b.asTypeOf(weightType)\n114:       mac_unit.io.in_c := c1\n115:       c1 := mac_unit.io.out_d\n116:       c2 := d.withWidthOf(cType)\n117:     }\n118:   }.elsewhen ((df == Dataflow.WS).B || ((df == Dataflow.BOTH).B && dataflow === WEIGHT_STATIONARY)) {\n119:     when(prop === PROPAGATE) {\n120:       io.out_c := c1\n121:       mac_unit.io.in_b := c2.asTypeOf(weightType)\n122:       mac_unit.io.in_c := b\n123:       io.out_b := mac_unit.io.out_d\n124:       c1 := d\n125:     }.otherwise {"
+        }
+      ]
+    },
+    {
+      "file": "src/main/scala/gemmini/MeshWithDelays.scala",
+      "excerpts": [
+        {
+          "line_start": 25,
+          "line_end": 39,
+          "text": "25: }\n26: \n27: // TODO Add io.out.ready back in. Before it was removed, it didn't work when banking, and it seemed to assume that SRAM outputs stay steady when ren is low\n28: // TODO Handle matrices where N1 =/= N2 =/= N3\n29: // TODO do we flush for one cycle more than necessary?\n30: // TODO make all inputs go straight into registers to help with physical design\n31: \n32: class MeshWithDelays[T <: Data: Arithmetic, U <: TagQueueTag with Data]\n33:   (val inputType: T,  val weightType: T, val outputType: T, accType: T,\n34:    tagType: U, df: Dataflow.Value, tree_reduction: Boolean, tile_latency: Int, output_delay: Int,\n35:    tileRows: Int, tileColumns: Int, meshRows: Int, meshColumns: Int,\n36:    leftBanks: Int, upBanks: Int, outBanks: Int = 1, n_simultaneous_matmuls: Int = -1)\n37:   extends Module {\n38: \n39:   val A_TYPE = Vec(meshRows, Vec(tileRows, inputType))"
+        },
+        {
+          "line_start": 56,
+          "line_end": 72,
+          "text": "56:   val tagqlen = max_simultaneous_matmuls+1\n57: \n58:   val io = IO(new Bundle {\n59:     val a = Flipped(Decoupled(A_TYPE))\n60:     val b = Flipped(Decoupled(B_TYPE))\n61:     val d = Flipped(Decoupled(D_TYPE))\n62: \n63:     val req = Flipped(Decoupled(new MeshWithDelaysReq(accType, tagType.cloneType, block_size)))\n64: \n65:     val resp = Valid(new MeshWithDelaysResp(outputType, meshColumns, tileColumns, block_size, tagType.cloneType))\n66: \n67:     val tags_in_progress = Output(Vec(tagqlen, tagType))\n68:   })\n69: \n70:   def shifted[T <: Data](x: Vec[Vec[T]], banks: Int, reverse: Boolean = false): Seq[Vec[T]] = {\n71:     assert(x.size % banks == 0, \"cannot bank without clean divisors\")\n72: "
+        },
+        {
+          "line_start": 86,
+          "line_end": 100,
+          "text": "86:         ShiftRegister(srs, j*(tile_latency+1))\n87:       }\n88: \n89:       RegShifted\n90:     }\n91:   }\n92: \n93:   val req = Reg(UDValid(new MeshWithDelaysReq(accType, tagType, block_size)))\n94: \n95:   val matmul_id = RegInit(0.U(log2Up(max_simultaneous_matmuls).W))\n96: \n97:   val total_fires = req.bits.total_rows\n98:   val fire_counter = RegInit(0.U(log2Up(block_size).W))\n99: \n100:   val a_buf = RegEnable(io.a.bits, io.a.fire)"
+        },
+        {
+          "line_start": 145,
+          "line_end": 174,
+          "text": "145:   io.d.ready := !d_written || input_next_row_into_spatial_array || io.req.ready\n146: \n147:   assert(req.valid || !input_next_row_into_spatial_array)\n148: \n149:   val pause = !req.valid || !input_next_row_into_spatial_array\n150: \n151:   // Transposer\n152:   val a_is_from_transposer = Mux(req.bits.pe_control.dataflow === Dataflow.OS.id.U, !req.bits.a_transpose, req.bits.a_transpose)\n153:   val b_is_from_transposer = req.bits.pe_control.dataflow === Dataflow.OS.id.U && req.bits.bd_transpose\n154:   val d_is_from_transposer = req.bits.pe_control.dataflow === Dataflow.WS.id.U && req.bits.bd_transpose\n155:   val transposer = Module(new AlwaysOutTransposer(block_size, inputType))\n156: \n157:   transposer.io.inRow.valid := !pause && (a_is_from_transposer || b_is_from_transposer || d_is_from_transposer)\n158:   transposer.io.inRow.bits := MuxCase(VecInit(a_buf.flatten), Seq(\n159:     b_is_from_transposer -> VecInit(b_buf.flatten),\n160:     d_is_from_transposer -> VecInit(d_buf.flatten.reverse),\n161:   ))\n162: \n163:   transposer.io.outCol.ready := true.B\n164:   val transposer_out = VecInit(transposer.io.outCol.bits.grouped(tileRows).map(t => VecInit(t)).toSeq)\n165: \n166:   // Wire up mesh's IO to this module's IO\n167:   val mesh = Module(new Mesh(inputType, weightType, outputType, accType, df, tree_reduction, tile_latency, max_simultaneous_matmuls, output_delay, tileRows, tileColumns, meshRows, meshColumns))\n168: \n169:   // TODO wire only to *_buf here, instead of io.*.bits\n170:   val a_shifter_in = WireInit(Mux(a_is_from_transposer, transposer_out.asTypeOf(A_TYPE), a_buf))\n171:   val b_shifter_in = WireInit(Mux(b_is_from_transposer, transposer_out.asTypeOf(B_TYPE), b_buf))\n172:   val d_shifter_in = WireInit(Mux(d_is_from_transposer,\n173:     VecInit(transposer_out.flatten.reverse.grouped(tileRows).map(VecInit(_)).toSeq).asTypeOf(D_TYPE), d_buf))\n174: "
+        },
+        {
+          "line_start": 192,
+          "line_end": 206,
+          "text": "192:   mesh.io.in_id := shifted(matmul_id_vec, upBanks)\n193: \n194:   val matmul_last_vec = VecInit(Seq.fill(meshColumns)(VecInit(Seq.fill(tileColumns)(last_fire))))\n195:   mesh.io.in_last := shifted(matmul_last_vec, upBanks)\n196: \n197:   // We want to output C when we're output-stationary, but B when we're weight-stationary\n198:   // TODO these would actually overlap when we switch from output-stationary to weight-stationary\n199:   io.resp.bits.data := shifted(Mux(mesh.io.out_control(0)(0).dataflow === Dataflow.OS.id.U, mesh.io.out_c, mesh.io.out_b), outBanks, true)\n200: \n201:   io.resp.valid := shifted(mesh.io.out_valid, outBanks, reverse = true)(0)(0)\n202: \n203:   val out_last = shifted(mesh.io.out_last, outBanks, reverse = true)(0)(0)\n204:   io.resp.bits.last := out_last\n205: \n206:   // Tags"
+        }
+      ]
+    },
+    {
+      "file": "src/main/scala/gemmini/Tile.scala",
+      "excerpts": [
+        {
+          "line_start": 9,
+          "line_end": 23,
+          "text": "9: /**\n10:   * A Tile is a purely combinational 2D array of passThrough PEs.\n11:   * a, b, s, and in_propag are broadcast across the entire array and are passed through to the Tile's outputs\n12:   * @param width The data width of each PE in bits\n13:   * @param rows Number of PEs on each row\n14:   * @param columns Number of PEs on each column\n15:   */\n16: class Tile[T <: Data](inputType: T, weightType: T, outputType: T, accType: T, df: Dataflow.Value, tree_reduction: Boolean, max_simultaneous_matmuls: Int, val rows: Int, val columns: Int)(implicit ev: Arithmetic[T]) extends Module {\n17:   val io = IO(new Bundle {\n18:     val in_a        = Input(Vec(rows, inputType))\n19:     val in_b        = Input(Vec(columns, outputType)) // This is the output of the tile next to it\n20:     val in_d        = Input(Vec(columns, outputType))\n21: \n22:     val in_control  = Input(Vec(columns, new PEControl(accType)))\n23:     val in_id       = Input(Vec(columns, UInt(log2Up(max_simultaneous_matmuls).W)))"
+        },
+        {
+          "line_start": 35,
+          "line_end": 49,
+          "text": "35:     val out_valid = Output(Vec(columns, Bool()))\n36: \n37:     val bad_dataflow = Output(Bool())\n38:   })\n39: \n40:   import ev._\n41: \n42:   val tile = Seq.fill(rows, columns)(Module(new PE(inputType, weightType, outputType, accType, df, max_simultaneous_matmuls)))\n43:   val tileT = tile.transpose\n44: \n45:   // TODO: abstract hori/vert broadcast, all these connections look the same\n46:   // Broadcast 'a' horizontally across the Tile\n47:   for (r <- 0 until rows) {\n48:     tile(r).foldLeft(io.in_a(r)) {\n49:       case (in_a, pe) =>"
+        }
+      ]
+    },
+    {
+      "file": "src/main/scala/gemmini/Mesh.scala",
+      "excerpts": [
+        {
+          "line_start": 7,
+          "line_end": 116,
+          "text": "7: \n8: /**\n9:   * A Grid is a 2D array of Tile modules with registers in between each tile and\n10:   * registers from the bottom row and rightmost column of tiles to the Grid outputs.\n11:   * @param width\n12:   * @param tileRows\n13:   * @param tileColumns\n14:   * @param meshRows\n15:   * @param meshColumns\n16:   */\n17: class Mesh[T <: Data : Arithmetic](inputType: T, weightType: T, outputType: T, accType: T,\n18:                                    df: Dataflow.Value, tree_reduction: Boolean, tile_latency: Int,\n19:                                    max_simultaneous_matmuls: Int, output_delay: Int,\n20:                                    val tileRows: Int, val tileColumns: Int,\n21:                                    val meshRows: Int, val meshColumns: Int) extends Module {\n22:   val io = IO(new Bundle {\n23:     val in_a = Input(Vec(meshRows, Vec(tileRows, inputType)))\n24:     val in_b = Input(Vec(meshColumns, Vec(tileColumns, weightType)))\n25:     val in_d = Input(Vec(meshColumns, Vec(tileColumns, weightType))) // TODO should this be weightType, inputType, or something like max(inputType, weightType)?\n26:     val in_control = Input(Vec(meshColumns, Vec(tileColumns, new PEControl(accType))))\n27:     val in_id = Input(Vec(meshColumns, Vec(tileColumns, UInt(log2Up(max_simultaneous_matmuls).W)))) // The unique id of this particular matmul\n28:     val in_last = Input(Vec(meshColumns, Vec(tileColumns, Bool())))\n29:     val out_b = Output(Vec(meshColumns, Vec(tileColumns, outputType)))\n30:     val out_c = Output(Vec(meshColumns, Vec(tileColumns, outputType)))\n31:     val in_valid = Input(Vec(meshColumns, Vec(tileColumns, Bool())))\n32:     val out_valid = Output(Vec(meshColumns, Vec(tileColumns, Bool())))\n33:     val out_control = Output(Vec(meshColumns, Vec(tileColumns, new PEControl(accType))))\n34:     val out_id = Output(Vec(meshColumns, Vec(tileColumns, UInt(log2Up(max_simultaneous_matmuls).W))))\n35:     val out_last = Output(Vec(meshColumns, Vec(tileColumns, Bool())))\n36:   })\n37: \n38:   // mesh(r)(c) => Tile at row r, column c\n39:   val mesh: Seq[Seq[Tile[T]]] = Seq.fill(meshRows, meshColumns)(Module(new Tile(inputType, weightType, outputType, accType, df, tree_reduction, max_simultaneous_matmuls, tileRows, tileColumns)))\n40:   val meshT = mesh.transpose\n41: \n42:   def pipe[T <: Data](valid: Bool, t: T, latency: Int): T = {\n43:     // The default \"Pipe\" function apparently resets the valid signals to false.B. We would like to avoid using global\n44:     // signals in the Mesh, so over here, we make it clear that the reset signal will never be asserted\n45:     chisel3.withReset(false.B) { Pipe(valid, t, latency).bits }\n46:   }\n47: \n48:   // Chain tile_a_out -> tile_a_in (pipeline a across each row)\n49:   // TODO clock-gate A signals with in_garbage\n50:   for (r <- 0 until meshRows) {\n51:     mesh(r).foldLeft(io.in_a(r)) {\n52:       case (in_a, tile) =>\n53:         tile.io.in_a := ShiftRegister(in_a, tile_latency+1)\n54:         tile.io.out_a\n55:     }\n56:   }\n57: \n58:   // Chain tile_out_b -> tile_b_in (pipeline b across each column)\n59:   for (c <- 0 until meshColumns) {\n60:     meshT(c).foldLeft((io.in_b(c), io.in_valid(c))) {\n61:       case ((in_b, valid), tile) =>\n62:         tile.io.in_b := pipe(valid.head, in_b, tile_latency+1)\n63:         (tile.io.out_b, tile.io.out_valid)\n64:     }\n65:   }\n66: \n67:   // Chain tile_out -> tile_propag (pipeline output across each column)\n68:   for (c <- 0 until meshColumns) {\n69:     meshT(c).foldLeft((io.in_d(c), io.in_valid(c))) {\n70:       case ((in_propag, valid), tile) =>\n71:         tile.io.in_d := pipe(valid.head, in_propag, tile_latency+1)\n72:         (tile.io.out_c, tile.io.out_valid)\n73:     }\n74:   }\n75: \n76:   // Chain control signals (pipeline across each column)\n77:   assert(!(mesh.map(_.map(_.io.bad_dataflow).reduce(_||_)).reduce(_||_)))\n78:   for (c <- 0 until meshColumns) {\n79:     meshT(c).foldLeft((io.in_control(c), io.in_valid(c))) {\n80:       case ((in_ctrl, valid), tile) =>\n81:         (tile.io.in_control, in_ctrl, valid).zipped.foreach { case (tile_ctrl, ctrl, v) =>\n82:           tile_ctrl.shift := pipe(v, ctrl.shift, tile_latency+1)\n83:           tile_ctrl.dataflow := pipe(v, ctrl.dataflow, tile_latency+1)\n84:           tile_ctrl.propagate := pipe(v, ctrl.propagate, tile_latency+1)\n85:         }\n86:         (tile.io.out_control, tile.io.out_valid)\n87:     }\n88:   }\n89: \n90:   // Chain in_valid (pipeline across each column)\n91:   for (c <- 0 until meshColumns) {\n92:     meshT(c).foldLeft(io.in_valid(c)) {\n93:       case (in_v, tile) =>\n94:         tile.io.in_valid := ShiftRegister(in_v, tile_latency+1)\n95:         tile.io.out_valid\n96:     }\n97:   }\n98: \n99:   // Chain in_id (pipeline across each column)\n100:   for (c <- 0 until meshColumns) {\n101:     meshT(c).foldLeft(io.in_id(c)) {\n102:       case (in_id, tile) =>\n103:         tile.io.in_id := ShiftRegister(in_id, tile_latency+1)\n104:         tile.io.out_id\n105:     }\n106:   }\n107: \n108:   // Chain in"
+        }
+      ]
+    },
+    {
+      "file": "src/main/scala/gemmini/Arithmetic.scala",
+      "excerpts": [
+        {
+          "line_start": 45,
+          "line_end": 59,
+          "text": "45:   // Optional parameters, which only need to be defined if you want to enable various optimizations for transformers\n46:   def divider(denom_t: UInt, options: Int = 0): Option[(DecoupledIO[UInt], DecoupledIO[T])] = None\n47:   def sqrt: Option[(DecoupledIO[UInt], DecoupledIO[T])] = None\n48:   def reciprocal[U <: Data](u: U, options: Int = 0): Option[(DecoupledIO[UInt], DecoupledIO[U])] = None\n49:   def mult_with_reciprocal[U <: Data](reciprocal: U) = self\n50: }\n51: \n52: object Arithmetic {\n53:   implicit object UIntArithmetic extends Arithmetic[UInt] {\n54:     override implicit def cast(self: UInt) = new ArithmeticOps(self) {\n55:       override def *(t: UInt) = self * t\n56:       override def mac(m1: UInt, m2: UInt) = m1 * m2 + self\n57:       override def +(t: UInt) = self + t\n58:       override def -(t: UInt) = self - t\n59: "
+        }
+      ]
+    },
+    {
+      "file": "src/main/scala/gemmini/GemminiConfigs.scala",
+      "excerpts": [
+        {
+          "line_start": 10,
+          "line_end": 38,
+          "text": "10: case class CapacityInKilobytes(kilobytes: Int) extends GemminiMemCapacity\n11: case class CapacityInMatrices(matrices: Int) extends GemminiMemCapacity\n12: \n13: case class ScaleArguments[T <: Data, U <: Data](scale_func: (T, U) => T, latency: Int, multiplicand_t: U,\n14:                                                 num_scale_units: Int,\n15:                                                 identity: String=\"0\", c_str: String=\"ROUNDING_RIGHT_SHIFT(x, scale)\")\n16: \n17: case class GemminiArrayConfig[T <: Data : Arithmetic, U <: Data, V <: Data](\n18:                                                                              opcodes: OpcodeSet = OpcodeSet.custom3,\n19: \n20:                                                                              inputType: T,\n21:                                                                              weightType: T,   \n22:                                                                              accType: T,\n23:                                                                              spatialArrayInputType: T,\n24:                                                                              spatialArrayWeightType: T,\n25:                                                                              spatialArrayOutputType: T,\n26: \n27:                                                                              dataflow: Dataflow.Value = Dataflow.BOTH,\n28: \n29:                                                                              tileRows: Int = 1,\n30:                                                                              tileColumns: Int = 1,\n31:                                                                              meshRows: Int = 16,\n32:                                                                              meshColumns: Int = 16,\n33: \n34:                                                                              ld_queue_length: Int = 8,\n35:                                                                              st_queue_length: Int = 2,\n36:                                                                              ex_queue_length: Int = 8,\n37: \n38:                                                                              reservation_station_entries_ld: Int = 8,"
+        },
+        {
+          "line_start": 74,
+          "line_end": 89,
+          "text": "74:                                                                              ex_read_from_acc: Boolean = true,\n75:                                                                              ex_write_to_spad: Boolean = true,\n76:                                                                              ex_write_to_acc: Boolean = true,\n77: \n78:                                                                              hardcode_d_to_garbage_addr: Boolean = false,\n79:                                                                              use_shared_tlb: Boolean = true,\n80: \n81:                                                                              tile_latency: Int = 0,\n82:                                                                              mesh_output_delay: Int = 1,\n83: \n84:                                                                              use_tree_reduction_if_possible: Boolean = true,\n85: \n86:                                                                              num_counter: Int = 8,\n87: \n88:                                                                              has_training_convs: Boolean = true,\n89:                                                                              has_max_pool: Boolean = true,"
+        },
+        {
+          "line_start": 98,
+          "line_end": 120,
+          "text": "98:                                                                              use_shared_ext_mem: Boolean = false,\n99:                                                                              use_tl_ext_mem: Boolean = false,\n100:                                                                              tl_ext_mem_base: BigInt = 0,\n101:                                                                              clock_gate: Boolean = false,\n102: \n103:                                                                              headerFileName: String = \"gemmini_params.h\"\n104:                                                        ) {\n105:   require(inputType.getWidth == weightType.getWidth)\n106:   val sp_width = meshColumns * tileColumns * inputType.getWidth\n107:   val sp_bank_entries = sp_capacity match {\n108:     case CapacityInKilobytes(kb) => kb * 1024 * 8 / (sp_banks * sp_width)\n109:     case CapacityInMatrices(ms) => ms * meshRows * tileRows / sp_banks\n110:   }\n111:   val acc_bank_entries = acc_capacity match {\n112:     case CapacityInKilobytes(kb) => kb * 1024 * 8 / (acc_banks * meshColumns * tileColumns * accType.getWidth)\n113:     case CapacityInMatrices(ms) => ms * meshRows * tileRows / acc_banks\n114:   }\n115:   require (!acc_singleported || (acc_sub_banks <= 4 && isPow2(acc_sub_banks)))\n116: \n117:   val local_addr_t = new LocalAddr(sp_banks, sp_bank_entries, acc_banks, acc_bank_entries)\n118: \n119: "
+        }
+      ]
+    }
+  ]
+}

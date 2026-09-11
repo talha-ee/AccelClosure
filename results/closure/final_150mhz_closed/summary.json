@@ -1,0 +1,84 @@
+{
+  "project": "AccelClosure",
+  "design": "accelclosure_ws_array",
+  "architecture": {
+    "array": "16x16 systolic array",
+    "dataflow": "weight-stationary",
+    "activation_precision": "INT8",
+    "weight_precision": "INT8",
+    "accumulator_precision": "INT32",
+    "pe_pipeline_stages": 2,
+    "boundary_input_registers": true
+  },
+  "technology": {
+    "platform": "sky130hd",
+    "corner": "tt_025C_1v80"
+  },
+  "target": {
+    "frequency_mhz": 150.0,
+    "period_ns": 6.667
+  },
+  "baseline": {
+    "pipeline": "original single-stage MAC",
+    "post_synthesis_wns_ns": -1.16,
+    "post_synthesis_tns_ns": -62.61,
+    "post_synthesis_area_mm2": 1.596175,
+    "post_synthesis_core_fmax_mhz": 146.17,
+    "target_met": false
+  },
+  "agentic_redesign": {
+    "failure_class": "TIMING_ARCHITECTURE",
+    "action": "Separated multiplication and accumulation into two PE pipeline stages and added synchronous array-boundary registers.",
+    "target_clock_relaxed": false
+  },
+  "functional_verification": {
+    "verilator_lint": "PASS",
+    "signed_gemm_regression": "26/26 PASS",
+    "regression_parameter_N": 16,
+    "pe_hop_latency_cycles": 2,
+    "boundary_input_registers": true,
+    "regression_report": "results/verification/parametric_n16_full.json"
+  },
+  "post_synthesis_pipelined": {
+    "area_mm2": 1.668438,
+    "instance_count": 133621,
+    "worst_setup_slack_ns": 2.41,
+    "wns_ns": 0.0,
+    "tns_ns": 0.0,
+    "core_fmax_mhz": 234.88,
+    "target_met": true
+  },
+  "post_route": {
+    "design_area_mm2": 1.890364,
+    "utilization_percent": 40,
+    "worst_setup_slack_ns": 1.86,
+    "wns_ns": 0.0,
+    "tns_ns": 0.0,
+    "setup_violation_count": 0,
+    "hold_violation_count": 0,
+    "worst_observed_hold_slack_ns": 0.21,
+    "setup_skew_ns": 0.18,
+    "minimum_period_ns": 4.8,
+    "estimated_fmax_mhz": 208.18,
+    "route_drc_violations": 0,
+    "antenna_violations": 0,
+    "wire_length_um": 4045420,
+    "via_count": 999638,
+    "target_met": true
+  },
+  "power": {
+    "estimated_total_w": 1.28,
+    "method": "ORFS final vectorless estimate",
+    "workload_activity_annotated": false
+  },
+  "gds": {
+    "path": "orfs_runs/results/sky130hd/accelclosure_ws_array/pipeline_iter1_150mhz/6_final.gds",
+    "size_mb_approx": 177,
+    "sha256": "86a484e15045be3357e3deb011beb2777f311c850b900c01b7c2adca9db89ab1"
+  },
+  "known_limitations": [
+    "ORFS LEC_CHECK was disabled because of the Docker CPU ISA/illegal-instruction issue.",
+    "Power is not workload-activity-qualified."
+  ],
+  "closure_status": "POST_ROUTE_150MHZ_TIMING_CLOSED"
+}

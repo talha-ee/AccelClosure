@@ -1,0 +1,19 @@
+{
+  "status": "REPAIRED_UNVERIFIED",
+  "repair_version": "1.0",
+  "failure_class": "verilator_width_warning",
+  "root_cause": "Implicit sign extension from 16-bit product to 32-bit product_ext caused Verilator to emit a WIDTH warning, as ASSIGNW expects the RHS to explicitly match the 32-bit width of the LHS.",
+  "repair_summary": "Added explicit sign extension using concatenation and replication to manually sign-extend the 16-bit product up to ACC_W (32 bits), satisfying Verilator's strict width matching requirements while maintaining signed correctness.",
+  "golden_principles_used": [
+    "Preserve signed INT8 multiplication and INT32 accumulation",
+    "The multiplication result must be EXPLICITLY and correctly sign-extended to ACC_W before accumulation"
+  ],
+  "verification_required": [
+    "Verilator lint must be rerun",
+    "Functional verification must still be performed"
+  ],
+  "source_tool": "Verilator",
+  "source_report": "results/verilator_lint_report.json",
+  "pre_repair_backup": "rtl/revisions/v1_before_verilator_repair",
+  "verified": false
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+export ACCELCLOSURE_ROOT="$ROOT"
+export ACCELCLOSURE_CHIA_PYTHON="${ACCELCLOSURE_CHIA_PYTHON:-$HOME/miniconda3/envs/chia_env/bin/python}"
+export GOOGLE_CLOUD_PROJECT="${GOOGLE_CLOUD_PROJECT:-continual-rhino-507506-f6}"
+export GOOGLE_CLOUD_LOCATION="${GOOGLE_CLOUD_LOCATION:-global}"
+export RAY_ADDRESS="${RAY_ADDRESS:-172.17.28.2:6379}"
+
+source "$ROOT/.venv_gui/bin/activate"
+
+exec python -m streamlit run "$ROOT/gui/app.py" \
+  --server.address 127.0.0.1 \
+  --server.port 8501 \
+  --server.headless true \
+  --browser.gatherUsageStats false

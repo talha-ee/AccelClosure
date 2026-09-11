@@ -1,0 +1,144 @@
+{
+  "id": "gemmini_systolic_array_v1",
+  "title": "Berkeley Gemmini Systolic Array Architecture",
+  "source": {
+    "repository": "https://github.com/ucb-bar/gemmini.git",
+    "branch": "master",
+    "commit": "8c3f9923a44a2fe2c7930587be297d6d4f8c09ca"
+  },
+
+  "reference_status": {
+    "source_inspected": true,
+    "locally_execution_verified": false,
+    "notes": "Architecture and configuration rules extracted from pinned upstream Gemmini source. Do not claim local execution verification until explicitly tested."
+  },
+
+  "architecture": {
+    "type": "parameterized_systolic_array",
+    "hierarchy": [
+      "MacUnit",
+      "PE",
+      "Tile",
+      "Mesh",
+      "MeshWithDelays"
+    ],
+    "supported_dataflows": [
+      "OS",
+      "WS",
+      "BOTH"
+    ]
+  },
+
+  "default_configuration": {
+    "input_bits": 8,
+    "weight_bits": 8,
+    "accumulator_bits": 32,
+    "spatial_array_output_bits": 20,
+
+    "tile_rows": 1,
+    "tile_columns": 1,
+    "mesh_rows": 16,
+    "mesh_columns": 16,
+
+    "effective_rows": 16,
+    "effective_columns": 16,
+
+    "dataflow": "BOTH",
+
+    "scratchpad_capacity_kb": 256,
+    "accumulator_capacity_kb": 64,
+
+    "scratchpad_banks": 4,
+    "accumulator_banks": 2
+  },
+
+  "search_space": {
+    "parameters": [
+      "inputType",
+      "weightType",
+      "accType",
+      "spatialArrayInputType",
+      "spatialArrayWeightType",
+      "spatialArrayOutputType",
+      "tileRows",
+      "tileColumns",
+      "meshRows",
+      "meshColumns",
+      "dataflow",
+      "sp_capacity",
+      "acc_capacity",
+      "sp_banks",
+      "acc_banks",
+      "tile_latency",
+      "mesh_output_delay"
+    ]
+  },
+
+  "derived_parameters": {
+    "block_rows": "tileRows * meshRows",
+    "block_columns": "tileColumns * meshColumns",
+    "dim": "block_rows"
+  },
+
+  "architectural_invariants": [
+    {
+      "rule": "inputType.getWidth == weightType.getWidth",
+      "reason": "Required by GemminiArrayConfig"
+    },
+    {
+      "rule": "meshColumns * tileColumns == meshRows * tileRows",
+      "reason": "Current Gemmini implementation requires a square systolic array"
+    },
+    {
+      "rule": "meshColumns * tileColumns >= 2",
+      "reason": "Current implementation requires array dimension of at least two"
+    },
+    {
+      "rule": "isPow2(meshColumns * tileColumns)",
+      "reason": "Current implementation requires power-of-two array dimension"
+    },
+    {
+      "rule": "sp_bank_entries % (meshRows * tileRows) == 0",
+      "reason": "Scratchpad bank rows must align to systolic-array dimension"
+    },
+    {
+      "rule": "acc_bank_entries % (meshRows * tileRows) == 0",
+      "reason": "Accumulator bank rows must align to systolic-array dimension"
+    }
+  ],
+
+  "behavioral_rules": [
+    {
+      "condition": "dataflow == WS && tileRows > 1 && tree reduction enabled",
+      "effect": "tree reduction may be used"
+    },
+    {
+      "condition": "dataflow == BOTH",
+      "effect": "runtime PE control can select OS or WS operation"
+    }
+  ],
+
+  "primary_source_files": [
+    "src/main/scala/gemmini/Dataflow.scala",
+    "src/main/scala/gemmini/Arithmetic.scala",
+    "src/main/scala/gemmini/PE.scala",
+    "src/main/scala/gemmini/Tile.scala",
+    "src/main/scala/gemmini/Mesh.scala",
+    "src/main/scala/gemmini/MeshWithDelays.scala",
+    "src/main/scala/gemmini/GemminiConfigs.scala",
+    "src/main/scala/gemmini/Configs.scala"
+  ],
+
+  "retrieve_when": [
+    "designing a systolic array",
+    "selecting weight-stationary dataflow",
+    "selecting output-stationary dataflow",
+    "changing systolic-array dimensions",
+    "changing arithmetic precision",
+    "sizing scratchpad or accumulator memory",
+    "reasoning about PE Tile Mesh hierarchy",
+    "reasoning about systolic-array pipeline latency"
+  ],
+
+  "agent_instruction": "Use this reference as architectural guidance. Preserve the listed invariants unless the task explicitly requires redesigning an invariant. Do not blindly copy Gemmini. Adapt the proven architectural principles to the requested accelerator and validate generated RTL independently."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "RTL_GENERATED_UNVERIFIED",
+  "generator_version": "1.0",
+  "golden_reference_id": "gemmini_systolic_array_v1",
+  "design_summary": "16x16 INT8 weight-stationary systolic array implemented in SystemVerilog. Features registered horizontal activation flow, vertical partial sum propagation, parameterizable array dimensions, and standard SV signed arithmetic for MAC sign-extension.",
+  "files": [
+    "rtl/accelclosure_ws_pe.sv",
+    "rtl/accelclosure_ws_array.sv"
+  ],
+  "design_notes": [
+    "Uses fully synchronous reset logic for all PE sequential elements to guarantee deterministic initial states.",
+    "Sign-extension of the MAC product naturally leverages SystemVerilog's built-in signed widening assignments.",
+    "Employs 2D unpacked arrays of signals to connect generated PEs structurally, improving code readability compared to explicit indexing over large 1D bit-vectors.",
+    "Follows strict systolic tile-based pipelining: purely combinational compute paths exist only within the MAC unit, heavily isolated by input and output register stages."
+  ],
+  "unverified_assumptions": [
+    "150 MHz timing will close without deeper MAC internal pipelining; it is assumed that a single-cycle INT8 multiplier feeding a 32-bit adder meets setup times easily on Sky130.",
+    "SystemVerilog unpacked array syntax and generation block mappings will elaborate cleanly in OpenROAD/Yosys environments.",
+    "External testbench stimulus or upstream SoC hardware implements exact wavefront scheduling for correct systolic summation."
+  ],
+  "functional_verified": false,
+  "lint_verified": false,
+  "synthesis_verified": false
+}

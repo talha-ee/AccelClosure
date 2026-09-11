@@ -1,0 +1,223 @@
+============================================================
+ ACCELCLOSURE RUNTIME / COST EVIDENCE DISCOVERY
+============================================================
+
+========== POSSIBLE COST / RUNTIME FILES ==========
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/cts_runtime_recovery.json
+results/submission/runtime_cost_discovery.txt
+
+========== RECORDED METADATA ==========
+results/runs/ws_n4_sky130hd_180mhz_20260907T142336Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T142336Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:10:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T170056Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T170056Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:10:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T170056Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T142408Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T142408Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:10:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T142408Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T142408Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:9:[AccelClosure] Dispatching RTL generation to Gemini...
+results/runs/ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10/closure/iter1/final/summary.json:79:    "CTS repair-timing block was skipped due a repeatable OpenROAD illegal-instruction runtime issue; final post-route timing was independently revalidated."
+results/runs/ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10/artifacts/run_record.json:362:        "CTS repair-timing block was skipped due a repeatable OpenROAD illegal-instruction runtime issue; final post-route timing was independently revalidated."
+results/runs/ws_n4_sky130hd_180mhz_20260907T132802Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T132802Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:7:[36m(OpenCodeLLM.prompt pid=7120)[0m Unexpected error on attempt 1/3: [Errno 2] No such file or directory: 'opencode'
+results/runs/ws_n4_sky130hd_180mhz_20260907T132802Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:11:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T132802Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:18:    raise ValueError("No JSON object found in Gemini response")
+results/runs/ws_n4_sky130hd_180mhz_20260907T132802Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:19:ValueError: No JSON object found in Gemini response
+results/runs/ws_n4_sky130hd_180mhz_20260907T132802Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:20:[36m(OpenCodeLLM.prompt pid=7120)[0m Unexpected error on attempt 2/3: [Errno 2] No such file or directory: 'opencode'
+results/runs/ws_n4_sky130hd_180mhz_20260907T132802Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:21:[36m(OpenCodeLLM.prompt pid=7120)[0m Unexpected error on attempt 3/3: [Errno 2] No such file or directory: 'opencode'
+results/runs/ws_n4_sky130hd_180mhz_20260907T174827Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T174827Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:10:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T174827Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T174827Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:9:[AccelClosure] Dispatching RTL generation to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/synthesis.log:9:Elapsed time: 0:00.46[h:]min:sec. CPU time: user 0.35 sys 0.11 (99%). Peak memory: 123272KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/synthesis.log:26:Elapsed time: 0:00.66[h:]min:sec. CPU time: user 0.54 sys 0.13 (99%). Peak memory: 152404KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/synthesis.log:27:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt2.log:63:[INFO CTS-0500] Runtime: 1.20s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt2.log:86:[INFO DPL-0500] Runtime: 0.14s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt2.log:101:[INFO RSZ-0505] Runtime: 0.40s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt2.log:103:[INFO RSZ-0506] Runtime: 0.10s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt2.log:106:Elapsed time: 0:02.94[h:]min:sec. CPU time: user 3.78 sys 1.25 (170%). Peak memory: 214620KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/cts_runtime_recovery.json:2:  "schema": "accelclosure.cts_runtime_recovery.v1",
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/cts_runtime_recovery.json:8:  "failure_class": "EDA_RUNTIME",
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:33:[INFO RSZ-0505] Runtime: 0.13s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:70:Elapsed time: 0:01.95[h:]min:sec. CPU time: user 1.67 sys 0.70 (121%). Peak memory: 177736KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:71:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:83:Elapsed time: 0:00.46[h:]min:sec. CPU time: user 0.33 sys 0.13 (100%). Peak memory: 139644KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:84:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:95:Elapsed time: 0:00.45[h:]min:sec. CPU time: user 0.34 sys 0.12 (99%). Peak memory: 137892KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:96:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:107:[INFO PDN-0500] Runtime: 0.12s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:110:Elapsed time: 0:00.73[h:]min:sec. CPU time: user 0.58 sys 0.14 (99%). Peak memory: 156832KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:111:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:217:Elapsed time: 0:02.12[h:]min:sec. CPU time: user 25.06 sys 0.17 (1189%). Peak memory: 153712KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:218:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:238:Elapsed time: 0:00.49[h:]min:sec. CPU time: user 0.39 sys 0.10 (99%). Peak memory: 146776KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:239:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:557:Took 8 seconds: global_placement -density 0.55 -pad_left 0 -pad_right 0 -routability_driven -timing_driven -force_center_initial_place -min_phi_coef 0.95 -max_phi_coef 1.05
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:566:Elapsed time: 0:10.93[h:]min:sec. CPU time: user 69.57 sys 2.13 (656%). Peak memory: 343080KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:567:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:593:[INFO RSZ-0504] Runtime: 0.69s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:604:Elapsed time: 0:04.46[h:]min:sec. CPU time: user 5.06 sys 2.46 (168%). Peak memory: 185012KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:605:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:633:[INFO DPL-0500] Runtime: 0.16s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:674:[INFO DPL-0326] Random improver cost string is (a).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:677:[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 1.754305e+08, Scratch cost 1.731850e+08, Incremental cost 1.731850e+08, Mismatch? N
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:678:[INFO DPL-0338] End of pass, Total cost is 1.731850e+08.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:679:[INFO DPL-0327] Pass   1 of random improver; improvement in cost is 1.28 percent.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:682:[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 1.731850e+08, Scratch cost 1.725514e+08, Incremental cost 1.725514e+08, Mismatch? N
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:683:[INFO DPL-0338] End of pass, Total cost is 1.725514e+08.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:684:[INFO DPL-0327] Pass   2 of random improver; improvement in cost is 0.37 percent.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:716:Elapsed time: 0:06.50[h:]min:sec. CPU time: user 6.72 sys 2.31 (138%). Peak memory: 198028KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:717:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:781:[INFO CTS-0500] Runtime: 1.31s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:804:[INFO DPL-0500] Runtime: 0.14s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:819:[INFO RSZ-0505] Runtime: 0.44s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:821:[INFO RSZ-0506] Runtime: 0.11s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt1.log:824:Elapsed time: 0:03.20[h:]min:sec. CPU time: user 3.80 sys 1.28 (158%). Peak memory: 215616KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:63:[INFO CTS-0500] Runtime: 1.21s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:86:[INFO DPL-0500] Runtime: 0.13s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:105:Elapsed time: 0:05.57[h:]min:sec. CPU time: user 7.73 sys 3.74 (205%). Peak memory: 208932KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:106:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:204:[INFO DRT-0267] cpu time = 00:03:56, elapsed time = 00:00:20, memory = 210.32 (MB), peak = 211.80 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:205:Took 21 seconds: pin_access
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:259:[INFO GRT-0303] Global routing runtime = 00:00:01
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:283:[INFO RSZ-0504] Runtime: 0.78s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:298:[INFO DPL-0500] Runtime: 0.07s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:314:[INFO RSZ-0505] Runtime: 0.44s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:316:[INFO RSZ-0506] Runtime: 0.16s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:331:[INFO DPL-0500] Runtime: 0.08s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:362:[INFO DPL-0500] Runtime: 0.07s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:382:Elapsed time: 0:34.60[h:]min:sec. CPU time: user 298.35 sys 5.88 (879%). Peak memory: 470644KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:383:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:481:[INFO DRT-0267] cpu time = 00:03:59, elapsed time = 00:00:21, memory = 341.77 (MB), peak = 344.59 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:529:[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 364.18 (MB), peak = 362.96 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:535:[INFO DRT-0267] cpu time = 00:00:03, elapsed time = 00:00:01, memory = 552.10 (MB), peak = 550.82 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:537:[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 552.86 (MB), peak = 551.57 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:541:    elapsed time = 00:00:01, memory = 1003.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:543:    elapsed time = 00:00:03, memory = 1005.35 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:545:    elapsed time = 00:00:05, memory = 1146.07 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:547:    elapsed time = 00:00:06, memory = 1240.33 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:549:    elapsed time = 00:00:08, memory = 1173.57 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:551:    elapsed time = 00:00:10, memory = 1342.04 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:553:    elapsed time = 00:00:11, memory = 1325.44 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:555:    elapsed time = 00:00:14, memory = 1357.18 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:557:    elapsed time = 00:00:16, memory = 1393.46 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:559:    elapsed time = 00:00:18, memory = 1290.99 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:567:[INFO DRT-0267] cpu time = 00:03:29, elapsed time = 00:00:19, memory = 1613.78 (MB), peak = 1612.58 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:591:    elapsed time = 00:00:01, memory = 1645.89 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:593:    elapsed time = 00:00:03, memory = 1645.74 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:595:    elapsed time = 00:00:05, memory = 1660.54 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:597:    elapsed time = 00:00:07, memory = 1681.16 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:599:    elapsed time = 00:00:09, memory = 1660.54 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:601:    elapsed time = 00:00:11, memory = 1679.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:603:    elapsed time = 00:00:12, memory = 1684.77 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:605:    elapsed time = 00:00:14, memory = 1692.66 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:607:    elapsed time = 00:00:16, memory = 1669.76 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:609:    elapsed time = 00:00:17, memory = 1666.32 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:615:[INFO DRT-0267] cpu time = 00:03:09, elapsed time = 00:00:18, memory = 1665.52 (MB), peak = 1691.53 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:639:    elapsed time = 00:00:00, memory = 1665.52 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:641:    elapsed time = 00:00:01, memory = 1676.11 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:643:    elapsed time = 00:00:01, memory = 1670.65 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:645:    elapsed time = 00:00:03, memory = 1717.97 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:647:    elapsed time = 00:00:05, memory = 1670.69 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:649:    elapsed time = 00:00:07, memory = 1691.33 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:651:    elapsed time = 00:00:08, memory = 1670.70 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:653:    elapsed time = 00:00:11, memory = 1691.62 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:655:    elapsed time = 00:00:12, memory = 1670.70 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:657:    elapsed time = 00:00:15, memory = 1672.32 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:663:[INFO DRT-0267] cpu time = 00:02:42, elapsed time = 00:00:15, memory = 1673.32 (MB), peak = 1716.96 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:687:    elapsed time = 00:00:00, memory = 1692.88 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:689:    elapsed time = 00:00:01, memory = 1673.68 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:691:    elapsed time = 00:00:02, memory = 1702.04 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:693:    elapsed time = 00:00:04, memory = 1727.70 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:695:    elapsed time = 00:00:06, memory = 1675.74 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:697:    elapsed time = 00:00:07, memory = 1700.24 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:699:    elapsed time = 00:00:08, memory = 1675.74 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:701:    elapsed time = 00:00:08, memory = 1675.74 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:703:    elapsed time = 00:00:09, memory = 1701.21 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:705:    elapsed time = 00:00:13, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:710:[INFO DRT-0267] cpu time = 00:01:39, elapsed time = 00:00:13, memory = 1676.84 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:734:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:736:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:738:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:740:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:742:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:744:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:746:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:748:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:750:    elapsed time = 00:00:00, memory = 1676.84 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:752:[INFO DRT-0267] cpu time = 00:00:01, elapsed time = 00:00:00, memory = 1678.84 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:796:[INFO DRT-0267] cpu time = 00:11:02, elapsed time = 00:01:07, memory = 1678.90 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:799:[INFO DRT-0501] Runtime: 93.38s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:800:Took 91 seconds: detailed_route -output_drc /workspace/AccelClosure/orfs_runs/reports/sky130hd/accelclosure_ws_array/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/5_route_drc.rpt -output_maze /workspace/AccelClosure/orfs_runs/results/sky130hd/accelclosure_ws_array/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:814:[INFO DPL-0500] Runtime: 0.06s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:849:[INFO DRT-0267] cpu time = 00:04:05, elapsed time = 00:00:20, memory = 1402.82 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:897:[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1402.82 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:903:[INFO DRT-0267] cpu time = 00:00:02, elapsed time = 00:00:01, memory = 1464.01 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:905:[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1464.01 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:909:    elapsed time = 00:00:00, memory = 1536.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:911:    elapsed time = 00:00:01, memory = 1547.88 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:913:    elapsed time = 00:00:02, memory = 1569.57 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:915:    elapsed time = 00:00:03, memory = 1569.66 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:917:    elapsed time = 00:00:03, memory = 1569.66 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:919:    elapsed time = 00:00:04, memory = 1582.68 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:921:    elapsed time = 00:00:04, memory = 1582.68 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:923:    elapsed time = 00:00:05, memory = 1585.23 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:925:    elapsed time = 00:00:06, memory = 1604.96 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:927:    elapsed time = 00:00:06, memory = 1604.96 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:933:[INFO DRT-0267] cpu time = 00:01:12, elapsed time = 00:00:07, memory = 1705.10 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:957:    elapsed time = 00:00:00, memory = 1706.78 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:959:    elapsed time = 00:00:01, memory = 1706.78 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:961:    elapsed time = 00:00:02, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:963:    elapsed time = 00:00:02, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:965:    elapsed time = 00:00:02, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:967:    elapsed time = 00:00:03, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:969:    elapsed time = 00:00:03, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:971:    elapsed time = 00:00:04, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:973:    elapsed time = 00:00:04, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:975:    elapsed time = 00:00:05, memory = 1706.95 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:979:[INFO DRT-0267] cpu time = 00:01:15, elapsed time = 00:00:05, memory = 1581.47 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1003:    elapsed time = 00:00:00, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1005:    elapsed time = 00:00:00, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1007:    elapsed time = 00:00:00, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1009:    elapsed time = 00:00:00, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1011:    elapsed time = 00:00:01, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1013:    elapsed time = 00:00:01, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1015:    elapsed time = 00:00:01, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1017:    elapsed time = 00:00:01, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1019:    elapsed time = 00:00:01, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1021:    elapsed time = 00:00:02, memory = 1581.47 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1025:[INFO DRT-0267] cpu time = 00:00:03, elapsed time = 00:00:02, memory = 1706.98 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1049:    elapsed time = 00:00:00, memory = 1706.98 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1051:    elapsed time = 00:00:00, memory = 1706.98 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1053:    elapsed time = 00:00:00, memory = 1706.98 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1055:    elapsed time = 00:00:00, memory = 1706.98 (MB).
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1057:[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1645.98 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1101:[INFO DRT-0267] cpu time = 00:02:32, elapsed time = 00:00:15, memory = 1645.98 (MB), peak = 1728.38 (MB)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1104:[INFO DRT-0501] Runtime: 40.26s
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1111:Elapsed time: 2:19.66[h:]min:sec. CPU time: user 1348.53 sys 6.88 (970%). Peak memory: 1769860KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1112:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1124:Elapsed time: 0:00.93[h:]min:sec. CPU time: user 0.68 sys 0.18 (91%). Peak memory: 196024KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1125:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1136:Elapsed time: 0:00.60[h:]min:sec. CPU time: user 0.42 sys 0.12 (91%). Peak memory: 167312KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1137:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1202:[WARNING GUI-0076] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1203:Elapsed time: 0:10.53[h:]min:sec. CPU time: user 11.38 sys 4.77 (153%). Peak memory: 412696KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1204:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1226:Elapsed time: 0:02.53[h:]min:sec. CPU time: user 2.16 sys 0.36 (99%). Peak memory: 495092KB.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/flow_attempt3_recovery.log:1229:Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:10:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:69:    "Dataflow is restricted strictly to Weight-Stationary, removing the dynamic OS/WS/BOTH runtime switching present in the golden reference to save area."
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:9:[AccelClosure] Dispatching RTL generation to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/contract/design_contract.json:54:    "Dataflow is restricted strictly to Weight-Stationary, removing the dynamic OS/WS/BOTH runtime switching present in the golden reference to save area."
+results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/contract/design_contract_raw.txt:54:    "Dataflow is restricted strictly to Weight-Stationary, removing the dynamic OS/WS/BOTH runtime switching present in the golden reference to save area."
+results/runs/ws_n4_sky130hd_180mhz_20260907T125123Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T125123Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:8:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T141815Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T141815Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:10:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T174407Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T174407Z_c0a64d4b/artifacts/orchestrator_logs/design_contract.log:10:[AccelClosure] Dispatching grounded request to Gemini...
+results/runs/ws_n4_sky130hd_180mhz_20260907T174407Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:1:OpenCodeLLM is experimental: only exercised by unit tests so far, not validated in production.
+results/runs/ws_n4_sky130hd_180mhz_20260907T174407Z_c0a64d4b/artifacts/orchestrator_logs/rtl_generation_iter0.log:9:[AccelClosure] Dispatching RTL generation to Gemini...

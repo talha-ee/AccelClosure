@@ -1,0 +1,86 @@
+{
+  "contract_version": "1.0",
+  "user_request": "Design an energy-efficient 16x16 INT8 weight-stationary systolic-array accelerator for GEMM and LLM inference targeting Sky130 with a target frequency of at least 150 MHz.",
+  "requested_constraints": {
+    "workload": [
+      "GEMM",
+      "LLM inference"
+    ],
+    "technology": "Sky130",
+    "target_frequency_mhz": 150,
+    "array_rows": 16,
+    "array_columns": 16,
+    "dataflow": "weight-stationary",
+    "input_precision": "INT8",
+    "weight_precision": "INT8"
+  },
+  "proposed_architecture": {
+    "architecture_class": "systolic_array",
+    "pe_operation": "Multiply-Accumulate (MAC)",
+    "accumulator_precision": "INT32 (conservative reference-derived design choice unless mathematically required)",
+    "rtl_language": "SystemVerilog",
+    "pipeline_strategy": "Tile-based register propagation with inter-PE pipelining along mesh rows and columns",
+    "memory_strategy": "Banked scratchpad memory and accumulator arrays explicitly aligned to the systolic-array dimension (16)"
+  },
+  "golden_grounding": {
+    "reference_id": "gemmini_systolic_array_v1",
+    "source_commit": "8c3f9923a44a2fe2c7930587be297d6d4f8c09ca",
+    "principles_used": [
+      "Parameterized PE control enabling specific dataflow mapping",
+      "Decoupled control and data propagation within MAC units",
+      "Systolic delays strategically injected between mesh partitions"
+    ],
+    "source_files_used": [
+      "src/main/scala/gemmini/Dataflow.scala",
+      "src/main/scala/gemmini/PE.scala",
+      "src/main/scala/gemmini/MeshWithDelays.scala",
+      "src/main/scala/gemmini/Tile.scala",
+      "src/main/scala/gemmini/Mesh.scala",
+      "src/main/scala/gemmini/Arithmetic.scala",
+      "src/main/scala/gemmini/GemminiConfigs.scala"
+    ]
+  },
+  "architectural_invariants": [
+    "inputType.getWidth == weightType.getWidth (Both constrained to 8 bits)",
+    "meshColumns * tileColumns == meshRows * tileRows (Square array required, configured as 16x16)",
+    "meshColumns * tileColumns >= 2 (16 >= 2)",
+    "isPow2(meshColumns * tileColumns) (16 is a power of two)",
+    "sp_bank_entries % (meshRows * tileRows) == 0 (Scratchpad alignment constraint)",
+    "acc_bank_entries % (meshRows * tileRows) == 0 (Accumulator alignment constraint)"
+  ],
+  "assumptions": [
+    "Energy efficiency will initially be derived from weight-stationary data reuse, not assumed structural features.",
+    "Clock gating, power gating, and other low-power physical optimizations are not assumed to be currently implemented.",
+    "Target frequency of 150 MHz is not claimed to be achieved; it remains purely a target until measured in EDA tools."
+  ],
+  "design_variables": [
+    "Internal pipeline stage depth within individual MAC units to ensure Sky130 150 MHz timing closure.",
+    "SRAM capacities and bank counts for scratchpad and accumulators.",
+    "Implementation of clock gating architectures for inactive PE segments (proposed for future validation).",
+    "Implementation of power gating schemes for idle memory blocks (proposed for future validation)."
+  ],
+  "validation_plan": {
+    "functional": [
+      "RTL simulation of 16x16 PE array correctly executing weight-stationary GEMM operations.",
+      "Verification of INT8 multiplication and INT32 accumulation correctness against golden behavioral models.",
+      "Validation of edge cases including systolic data propagation delays and matrix sizing."
+    ],
+    "synthesis": [
+      "Logic synthesis targeting the open-source Sky130 standard cell library.",
+      "Static Timing Analysis (STA) to evaluate worst-case timing paths under the 150 MHz target.",
+      "Pre-layout area and power constraint estimations."
+    ],
+    "physical_design": [
+      "Placement and routing (PnR) inside an EDA flow (e.g., OpenROAD) using Sky130 technology files.",
+      "Post-layout STA to guarantee 150 MHz operation is met with extracted parasitics.",
+      "Formal DRC (Design Rule Check) and LVS (Layout Versus Schematic) clearance."
+    ]
+  },
+  "measurement_status": {
+    "functional_verified": false,
+    "timing_measured": false,
+    "area_measured": false,
+    "power_measured": false,
+    "physical_design_completed": false
+  }
+}

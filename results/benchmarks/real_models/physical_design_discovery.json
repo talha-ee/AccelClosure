@@ -1,0 +1,37 @@
+{
+  "schema": "accelclosure.physical_design_discovery.v1",
+  "designs": [
+    {
+      "array_n": 4,
+      "source": "results/runs/ws_n4_sky130hd_180mhz_20260908T060310Z_c0a64d4b/eda/physical/summary_v2.json",
+      "status": "POST_ROUTE_PHYSICALLY_CLOSED",
+      "target_frequency_mhz": null,
+      "worst_setup_slack_ns": 0.81,
+      "fmax_estimate_mhz": 210.57,
+      "routed_area_mm2": null,
+      "vectorless_power_w": null,
+      "setup_violations": null,
+      "hold_violations": null,
+      "route_drc_violations": null,
+      "antenna_net_violations": 0,
+      "antenna_pin_violations": 0,
+      "gds_sha256": null
+    },
+    {
+      "array_n": 8,
+      "source": "results/runs/ws_n8_sky130hd_200mhz_20260906T161925Z_2ff41a10/closure/iter1/eda/physical/summary_v2.json",
+      "status": "POST_ROUTE_PHYSICALLY_CLOSED",
+      "target_frequency_mhz": null,
+      "worst_setup_slack_ns": 0.28,
+      "fmax_estimate_mhz": 212.0,
+      "routed_area_mm2": null,
+      "vectorless_power_w": null,
+      "setup_violations": null,
+      "hold_violations": null,
+      "route_drc_violations": null,
+      "antenna_net_violations": 0,
+      "antenna_pin_violations": 0,
+      "gds_sha256": null
+    }
+  ]
+}
