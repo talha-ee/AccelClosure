@@ -1,0 +1,79 @@
+{
+  "schema": "accelclosure.implementation_context.v1",
+  "created_utc": "2026-09-12T08:43:36.546287+00:00",
+  "run_id": "ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea",
+  "implementation_id": "baseline",
+  "iteration": 0,
+  "parent": null,
+  "request": {
+    "n": 12,
+    "rows": 12,
+    "cols": 12,
+    "dataflow": "weight_stationary",
+    "activation_width": 8,
+    "weight_width": 8,
+    "accumulator_width": 32,
+    "technology": "sky130hd",
+    "target_frequency_mhz": 170.0,
+    "target_period_ns": 5.882353,
+    "optimization_objective": "timing"
+  },
+  "implementation": {
+    "rtl_dir": "results/runs/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/rtl",
+    "rtl": {
+      "pe": {
+        "path": "results/runs/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/rtl/accelclosure_ws_pe.sv",
+        "sha256": "0e41711208867937a6a7aaacf6546069a93356cfcab101a2f34b4602a8711412"
+      },
+      "array": {
+        "path": "results/runs/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/rtl/accelclosure_ws_array.sv",
+        "sha256": "93372f169a680da300f34d80d6c119c5b7280d04991e43e1596a7532f0ec6467"
+      }
+    },
+    "verification": {
+      "summary_path": "results/runs/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/verification/summary.json",
+      "summary_sha256": "76e2d4514d666b9704efa140c2e63abb8cf860db9524bf0f8056c1e9c2667100",
+      "status": "FUNCTIONALLY_VERIFIED",
+      "lint_report": {
+        "path": "results/runs/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/verification/verilator_lint.json",
+        "sha256": "0d929b36356cacb59136c2a5274d150e3ce4bca2d38aac564dac06b7989d3566"
+      }
+    }
+  },
+  "eda": {
+    "technology": "sky130hd",
+    "design_name": "accelclosure_ws_array",
+    "variant": "ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea",
+    "config_dir": "configs/generated/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea",
+    "eda_dir": "results/runs/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/eda",
+    "results_dir": "orfs_runs/results/sky130hd/accelclosure_ws_array/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea",
+    "reports_dir": "orfs_runs/reports/sky130hd/accelclosure_ws_array/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea"
+  },
+  "policies": {
+    "automation_policy": {
+      "path": "configs/product/automation_policy.json",
+      "sha256": "9ad269aa12801c39db311ea36834db69011d41b4d5f36c111f2c5c7660e38a7f"
+    },
+    "pipeline_policy": {
+      "path": "configs/product/pipeline_policy.json",
+      "sha256": "a1d8dce2626ac414c8e11532ef7af4f7cc692501a48cb36bec0531259cbe7150"
+    },
+    "clock_relaxation_allowed": false,
+    "reuse_other_run_metrics": false
+  },
+  "provenance": {
+    "run_context": {
+      "path": "results/runs/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/run_context.json",
+      "sha256": "a6bbf7f31f94b8c96b25a38dc56e558b9fb921dec79b7909ae72e239959a43c7"
+    },
+    "closure_agent_report": null
+  },
+  "measurement_status": {
+    "synthesis": false,
+    "prelayout_sta": false,
+    "physical_design": false,
+    "post_route_sta": false,
+    "power": false,
+    "gds": false
+  }
+}

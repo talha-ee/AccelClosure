@@ -1,0 +1,16 @@
+{
+  "schema": "accelclosure.cts_runtime_recovery.v1",
+  "timestamp_utc": "2026-09-12T08:56:07.376996+00:00",
+  "run_id": "ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea",
+  "implementation_id": "baseline",
+  "target_frequency_mhz": 170.0,
+  "target_period_ns": 5.882353,
+  "failure_class": "EDA_RUNTIME",
+  "signature": "cts.tcl child killed: illegal instruction",
+  "original_retry_count": 1,
+  "workaround": "SKIP_CTS_REPAIR_TIMING=1",
+  "clock_target_relaxed": false,
+  "source_rtl_modified": false,
+  "post_route_setup_revalidation_required": true,
+  "post_route_hold_revalidation_required": true
+}

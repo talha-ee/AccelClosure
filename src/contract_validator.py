@@ -152,13 +152,10 @@ def validate(contract, context, card):
         else:
             ok("SQUARE_ARRAY")
 
-        if not is_power_of_two(rows):
-            errors.append(
-                "Current Gemmini-derived golden contract requires "
-                "power-of-two array dimension"
-            )
-        else:
-            ok("POWER_OF_TWO_DIMENSION")
+        # Arbitrary positive square dimensions are supported by the
+        # parametric WS backend. Fresh configurations still require
+        # independent functional and EDA evidence.
+        ok("PARAMETRIC_ARRAY_DIMENSION")
 
     dataflow = str(req.get("dataflow", "")).strip().lower()
 

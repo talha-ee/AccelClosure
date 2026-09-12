@@ -256,20 +256,11 @@ known_cts_crash() {
 
     local log="$1"
 
-    grep -q \
-      'Error: cts.tcl.*child killed: illegal instruction' \
-      "$log" \
-    && \
-    grep -q \
-      'Created .* clock buffers' \
-      "$log" \
-    && \
-    grep -q \
-      'No setup violations found' \
-      "$log" \
-    && \
-    grep -q \
-      'No hold violations found' \
+    # A SIGILL / illegal-instruction termination inside cts.tcl is
+    # classified as an EDA runtime failure. It is not evidence of an
+    # RTL functional or architectural failure.
+    grep -Eiq \
+      'Error:[[:space:]]*cts\.tcl.*child killed:[[:space:]]*illegal instruction|SIGILL' \
       "$log"
 }
 
@@ -516,6 +507,264 @@ PY
                 exit "$RC3"
             fi
         fi
+    fi
+fi
+
+
+# ------------------------------------------------------------
+# Autonomous physical antenna recovery.
+#
+# This branch is allowed only when final detailed-route DRC is
+# already clean and residual antenna violations remain.
+#
+# It never modifies source RTL and never relaxes the requested
+# clock. CTS is preserved. Only global-route-and-later physical
+# artifacts are invalidated and regenerated.
+# ------------------------------------------------------------
+
+if [ -s "$DETAILED_ROUTE_LOG" ]; then
+
+    FINAL_DRC_COUNT="$(
+        grep -oE \
+          'Number of violations = [0-9]+' \
+          "$DETAILED_ROUTE_LOG" \
+        | tail -1 \
+        | grep -oE '[0-9]+' \
+        || true
+    )"
+
+    FINAL_ANTENNA_NET_COUNT="$(
+        grep -oE \
+          'Found [0-9]+ net violations' \
+          "$DETAILED_ROUTE_LOG" \
+        | tail -1 \
+        | grep -oE '[0-9]+' \
+        || true
+    )"
+
+    FINAL_ANTENNA_PIN_COUNT="$(
+        grep -oE \
+          'Found [0-9]+ pin violations' \
+          "$DETAILED_ROUTE_LOG" \
+        | tail -1 \
+        | grep -oE '[0-9]+' \
+        || true
+    )"
+
+    if \
+      [ -n "$FINAL_DRC_COUNT" ] \
+      && [ -n "$FINAL_ANTENNA_NET_COUNT" ] \
+      && [ -n "$FINAL_ANTENNA_PIN_COUNT" ] \
+      && [ "$FINAL_DRC_COUNT" -eq 0 ] \
+      && \
+      { \
+        [ "$FINAL_ANTENNA_NET_COUNT" -gt 0 ] \
+        || [ "$FINAL_ANTENNA_PIN_COUNT" -gt 0 ]; \
+      }
+    then
+
+        echo
+        echo "FAILURE_CLASS=PHYSICAL_ANTENNA"
+        echo "ANTENNA_NET_VIOLATIONS=$FINAL_ANTENNA_NET_COUNT"
+        echo "ANTENNA_PIN_VIOLATIONS=$FINAL_ANTENNA_PIN_COUNT"
+        echo "ACTION=RETRY_WITH_STRONGER_ANTENNA_REPAIR"
+        echo "SOURCE_RTL_MODIFIED=false"
+        echo "CLOCK_TARGET_RELAXED=false"
+        echo "RESTART_STAGE=GLOBAL_ROUTE"
+
+        ANTENNA_RECOVERY_CONFIG_HOST="$CONFIG_DIR_REL/runtime_antenna_recovery.mk"
+        ANTENNA_RECOVERY_CONFIG="$ROOT/$ANTENNA_RECOVERY_CONFIG_HOST"
+        ANTENNA_RECOVERY_CONFIG_CONTAINER="/workspace/AccelClosure/$ANTENNA_RECOVERY_CONFIG_HOST"
+
+        BASE_RECOVERY_INCLUDE="/workspace/AccelClosure/$CONFIG_DIR_REL/config.mk"
+
+        if [ -f "$ROOT/$CONFIG_DIR_REL/runtime_cts_recovery.mk" ]; then
+            BASE_RECOVERY_INCLUDE="/workspace/AccelClosure/$CONFIG_DIR_REL/runtime_cts_recovery.mk"
+        fi
+
+        cat > "$ANTENNA_RECOVERY_CONFIG" <<EOF
+include $BASE_RECOVERY_INCLUDE
+
+# AccelClosure autonomous antenna recovery.
+# Source RTL is unchanged.
+# Requested clock is unchanged.
+# Physical repair is bounded and must be revalidated afterward.
+
+export SKIP_ANTENNA_REPAIR = 0
+export SKIP_ANTENNA_REPAIR_PRE_GRT = 0
+export SKIP_ANTENNA_REPAIR_POST_DRT = 0
+
+export MAX_REPAIR_ANTENNAS_ITER_GRT = 8
+export MAX_REPAIR_ANTENNAS_ITER_DRT = 8
+EOF
+
+        python - \
+          "$PHYSICAL_DIR/antenna_runtime_recovery.json" \
+          "$RUN_ID" \
+          "$IMPL_ID" \
+          "$FREQ_MHZ" \
+          "$PERIOD_NS" \
+          "$FINAL_DRC_COUNT" \
+          "$FINAL_ANTENNA_NET_COUNT" \
+          "$FINAL_ANTENNA_PIN_COUNT" \
+          "$BASE_RECOVERY_INCLUDE" \
+          <<'PYREC'
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+out = Path(sys.argv[1])
+
+record = {
+    "schema": "accelclosure.antenna_runtime_recovery.v1",
+    "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+    "run_id": sys.argv[2],
+    "implementation_id": sys.argv[3],
+    "target_frequency_mhz": float(sys.argv[4]),
+    "target_period_ns": float(sys.argv[5]),
+    "failure_class": "PHYSICAL_ANTENNA",
+    "initial_route_drc_violations": int(sys.argv[6]),
+    "initial_antenna_net_violations": int(sys.argv[7]),
+    "initial_antenna_pin_violations": int(sys.argv[8]),
+    "base_recovery_config": sys.argv[9],
+    "restart_stage": "GLOBAL_ROUTE",
+    "max_repair_antennas_iter_grt": 8,
+    "max_repair_antennas_iter_drt": 8,
+    "clock_target_relaxed": False,
+    "source_rtl_modified": False,
+    "post_route_timing_revalidation_required": True,
+    "post_route_drc_revalidation_required": True,
+    "post_route_antenna_revalidation_required": True,
+}
+
+if not out.exists():
+    out.write_text(
+        json.dumps(record, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print("ANTENNA_RUNTIME_RECOVERY_PROVENANCE_RECORDED")
+else:
+    print("ANTENNA_RUNTIME_RECOVERY_PROVENANCE_ALREADY_PRESENT")
+PYREC
+
+        if [ -f "$POSTROUTE_SUMMARY" ]; then
+
+            PRE_RECOVERY_SUMMARY="$PHYSICAL_DIR/summary_v2.pre_antenna_recovery.json"
+
+            if [ ! -f "$PRE_RECOVERY_SUMMARY" ]; then
+                cp -p \
+                  "$POSTROUTE_SUMMARY" \
+                  "$PRE_RECOVERY_SUMMARY"
+            fi
+
+            rm -f "$POSTROUTE_SUMMARY"
+        fi
+
+        if [ -f "$POWER_LOG" ]; then
+
+            PRE_RECOVERY_POWER="$FINAL_DIR/final_power.pre_antenna_recovery.log"
+
+            if [ ! -f "$PRE_RECOVERY_POWER" ]; then
+                cp -p \
+                  "$POWER_LOG" \
+                  "$PRE_RECOVERY_POWER"
+            fi
+
+            rm -f "$POWER_LOG"
+        fi
+
+        echo
+        echo "ANTENNA_RECOVERY_INVALIDATING_FROM=GLOBAL_ROUTE"
+
+        # ORFS artifacts are created inside Docker and may be
+        # root-owned from the host perspective. Invalidate them
+        # inside the same container environment instead of using
+        # host-side deletion.
+
+        docker run --rm \
+          -v "$ROOT:/workspace/AccelClosure" \
+          "$ORFS_IMAGE" \
+          bash -lc "
+            rm -f \
+              /workspace/AccelClosure/$RESULTS_REL/5_* \
+              /workspace/AccelClosure/$RESULTS_REL/6_*
+
+            rm -f \
+              /workspace/AccelClosure/$REPORTS_REL/5_* \
+              /workspace/AccelClosure/$REPORTS_REL/6_* \
+              /workspace/AccelClosure/$REPORTS_REL/grt_antennas.log \
+              /workspace/AccelClosure/$REPORTS_REL/drt_antennas.log
+
+            rm -f \
+              /workspace/AccelClosure/$LOGS_REL/5_* \
+              /workspace/AccelClosure/$LOGS_REL/6_*
+          "
+
+        ANTENNA_ATTEMPT="$PHYSICAL_DIR/flow_antenna_recovery.log"
+
+        set +e
+
+        run_flow \
+          "$ANTENNA_RECOVERY_CONFIG_CONTAINER" \
+          "$ANTENNA_ATTEMPT"
+
+        ANTENNA_RC=$?
+
+        set -e
+
+        if [ "$ANTENNA_RC" -ne 0 ]; then
+
+            echo
+            echo "FAILURE_CLASS=PHYSICAL_ANTENNA"
+            echo "ANTENNA_RECOVERY_RESULT=EDA_FLOW_FAILED"
+            echo "Automation stopped."
+
+            exit "$ANTENNA_RC"
+        fi
+
+        if [ ! -s "$DETAILED_ROUTE_LOG" ]; then
+
+            echo
+            echo "FAILURE_CLASS=PHYSICAL_EVIDENCE"
+            echo "ANTENNA_RECOVERY_RESULT=ROUTE_LOG_MISSING"
+
+            exit 1
+        fi
+
+        RECOVERY_DRC_COUNT="$(
+            grep -oE \
+              'Number of violations = [0-9]+' \
+              "$DETAILED_ROUTE_LOG" \
+            | tail -1 \
+            | grep -oE '[0-9]+' \
+            || true
+        )"
+
+        RECOVERY_ANTENNA_NET_COUNT="$(
+            grep -oE \
+              'Found [0-9]+ net violations' \
+              "$DETAILED_ROUTE_LOG" \
+            | tail -1 \
+            | grep -oE '[0-9]+' \
+            || true
+        )"
+
+        RECOVERY_ANTENNA_PIN_COUNT="$(
+            grep -oE \
+              'Found [0-9]+ pin violations' \
+              "$DETAILED_ROUTE_LOG" \
+            | tail -1 \
+            | grep -oE '[0-9]+' \
+            || true
+        )"
+
+        echo
+        echo "ANTENNA_RECOVERY_COMPLETED=true"
+        echo "RECOVERY_ROUTE_DRC_VIOLATIONS=${RECOVERY_DRC_COUNT:-unknown}"
+        echo "RECOVERY_ANTENNA_NET_VIOLATIONS=${RECOVERY_ANTENNA_NET_COUNT:-unknown}"
+        echo "RECOVERY_ANTENNA_PIN_VIOLATIONS=${RECOVERY_ANTENNA_PIN_COUNT:-unknown}"
+        echo "NEXT_ACTION=FULL_POST_ROUTE_REVALIDATION"
     fi
 fi
 

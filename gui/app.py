@@ -900,7 +900,14 @@ with tab_design:
     with left:
         c1, c2, c3, c4 = st.columns([.9, 1.05, 1.0, 1.05])
         with c1:
-            n = st.selectbox("Array geometry", [4, 8, 16, 32], index=1, format_func=lambda x: f"{x} × {x}")
+            n = st.number_input(
+                "Array geometry (N × N)",
+                min_value=2,
+                max_value=128,
+                value=12,
+                step=1,
+                help="Validated physical references: 4×4, 8×8, and 16×16. Other geometries require fresh verification and EDA evidence.",
+            )
         with c2:
             dataflow = st.selectbox(
                 "Dataflow",

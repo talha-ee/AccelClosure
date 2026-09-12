@@ -1,0 +1,76 @@
+{
+  "schema": "accelclosure.postroute_summary.v2",
+  "generated_utc": "2026-09-12T09:52:02.181583+00:00",
+  "run_id": "ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea",
+  "implementation_id": "baseline",
+  "iteration": 0,
+  "target": {
+    "technology": "sky130hd",
+    "frequency_mhz": 170.0,
+    "period_ns": 5.882353
+  },
+  "timing": {
+    "source": "ORFS final extracted post-route report",
+    "worst_setup_slack_ns": 1.11,
+    "wns_ns": 0.0,
+    "tns_ns": 0.0,
+    "minimum_period_ns": 4.77,
+    "fmax_estimate_mhz": 209.51,
+    "setup_violation_count": 0,
+    "hold_violation_count": 0,
+    "target_met": true
+  },
+  "area": {
+    "source": "final_power.log report_design_area",
+    "routed_cell_area_um2": 1106252.0,
+    "routed_cell_area_mm2": 1.106252,
+    "utilization_percent": 40.0
+  },
+  "physical_checks": {
+    "openroad_route_drc_violations": 0,
+    "antenna_net_violations": 0,
+    "antenna_pin_violations": 0,
+    "route_clean": true,
+    "antenna_clean": true,
+    "foundry_signoff_drc_lvs": false
+  },
+  "power": {
+    "analysis_type": "vectorless_estimate",
+    "internal_w": 0.435,
+    "switching_w": 0.221,
+    "leakage_w": 5.15e-07,
+    "total_w": 0.656,
+    "workload_measured": false
+  },
+  "artifacts": {
+    "gds": {
+      "path": "orfs_runs/results/sky130hd/accelclosure_ws_array/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/6_final.gds",
+      "size_bytes": 109999324,
+      "sha256": "0922dae48e0dd522acacfc5005bb6250fdcf2e1492228b6d4306c6d353685df8"
+    },
+    "odb": {
+      "path": "orfs_runs/results/sky130hd/accelclosure_ws_array/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/6_final.odb",
+      "size_bytes": 223298855,
+      "sha256": "1d082ee563d95c4a1980745f88fb1acc2ff461078ba6f86f950ffa83caef8d51"
+    },
+    "sdc": {
+      "path": "orfs_runs/results/sky130hd/accelclosure_ws_array/ws_n12_sky130hd_170mhz_20260912T084113Z_42bd82ea/6_final.sdc",
+      "size_bytes": 101494,
+      "sha256": "99ac9f482e60f5634ae56330a422c789c24d57112a545a96afc493c952fd39d3"
+    }
+  },
+  "status": "POST_ROUTE_PHYSICALLY_CLOSED",
+  "claim_discipline": {
+    "fmax_is_sta_estimate": true,
+    "power_is_vectorless_estimate": true,
+    "gds_is_not_tapeout_signoff": true,
+    "openroad_drc_is_not_foundry_signoff": true
+  },
+  "provenance": {
+    "implementation_context_sha256": "e815d1c85d302116f8f304369ba27d06ea3ad7d56c409d7b3ba2ca7d65513fe9",
+    "finish_report_sha256": "ac593bb7fbf60a5d043df7c529ae659e2d1cfa85be18fdb5b63544493de0ae35",
+    "route_evidence_sha256": "3be4d3681ebf74fb1ede5de0b6749a8b7774f1c5159efc334685f37075548329",
+    "antenna_log_sha256": "3be4d3681ebf74fb1ede5de0b6749a8b7774f1c5159efc334685f37075548329",
+    "power_log_sha256": "c5180137757426d43ce1ab658ac7fea5c9ea31d90acff0c248048fcbf3eca5bb"
+  }
+}

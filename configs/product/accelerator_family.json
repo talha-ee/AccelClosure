@@ -1,20 +1,15 @@
 {
   "schema": "accelclosure.accelerator_family.v1",
-
   "product": "AccelClosure",
-
   "design_family": "parameterized_systolic_array",
-
   "description": "Agentic generation and physical design closure of configurable systolic-array AI accelerators.",
-
   "array": {
     "shape": "square",
     "dimension_parameter": "N",
     "minimum_n": 2,
-    "power_of_two_required": true,
+    "power_of_two_required": false,
     "hardcoded_dimension": false
   },
-
   "dataflows": {
     "weight_stationary": {
       "supported": true,
@@ -29,7 +24,6 @@
       "verification_status": "NOT_YET_IMPLEMENTED"
     }
   },
-
   "arithmetic": {
     "activation": [
       "INT8"
@@ -41,14 +35,12 @@
       "INT32"
     ]
   },
-
   "technology": {
     "sky130hd": {
       "supported": true,
       "physical_flow": "OpenROAD-flow-scripts"
     }
   },
-
   "user_constraints": {
     "array_dimension": true,
     "target_frequency_mhz": true,
@@ -56,13 +48,12 @@
     "technology": true,
     "optimization_objective": true
   },
-
   "optimization_objectives": [
-    "timing",
+    "latency",
     "area",
-    "balanced_ppa"
+    "energy",
+    "balanced"
   ],
-
   "closure_rules": {
     "never_relax_user_frequency_without_explicit_permission": true,
     "never_claim_results_from_another_configuration": true,
@@ -70,7 +61,6 @@
     "physical_metrics_must_come_from_eda_tools": true,
     "agent_cannot_self_declare_closure": true
   },
-
   "reference_runs": [
     {
       "name": "ws_int8_n16_sky130_150mhz",
